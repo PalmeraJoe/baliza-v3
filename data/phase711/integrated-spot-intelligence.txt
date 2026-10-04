@@ -1,0 +1,89 @@
+SPOT INTELLIGENCE
+
+SPOT
+DEMO-CRW-ORIG24-HERITAGE-POINT
+Latitude: -23.5
+Longitude: 152.0
+CRS: UNKNOWN
+
+THERMAL
+NOAA CRW
+- SST: available
+- SST anomaly: available
+- HotSpot: available
+- DHW: available
+- Bleaching Alert Area: available
+
+Classification:
+EXTERNAL INDICATOR
+
+HABITAT / SPATIAL CONTEXT
+Allen Coral Atlas
+- benthic classification: partial (extract exists elsewhere; not attached to this Spot)
+- geomorphic context: partial (extract exists elsewhere; not attached to this Spot)
+- coverage for this Spot: NOT_AVAILABLE
+
+Classification:
+CONTEXT ONLY
+
+FIELD ECOLOGICAL OBSERVATIONS
+MERMAID
+- compatible field observations: 0
+- status: DATA EXISTS BUT NO COMPATIBLE MATCH
+
+IMPORTANT:
+Absence of a compatible MERMAID observation
+does not imply absence of bleaching.
+
+THERMAL GROUND TRUTH
+NOT_AVAILABLE
+
+LOCAL ESTIMATION
+NOT_AUTHORIZED
+
+UNCERTAINTY
+- measurement: UNKNOWN
+- spatial: PARTIAL
+- temporal: PARTIAL
+- association: PARTIAL
+- methodological: PARTIAL
+- model: NOT_APPLICABLE
+
+DATA GAPS
+- [DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY] NOAA_CORAL_REEF_WATCH: CRW products exist on one retrieved cell; production association stays UNKNOWN (CRS unknown).
+- [DATA_EXISTS_NO_COMPATIBLE_MATCH] ALLEN_CORAL_ATLAS: Allen extracts exist; DEMO Spot has no attached class (bbox / null geometry).
+- [DATA_EXISTS_NO_COMPATIBLE_MATCH] MERMAID: MERMAID data exists (Australia summaries) but no compatible field observation for this Spot. Not equivalent to NO_DATA, NO_BLEACHING, or HEALTHY.
+- [DATA_EXISTS_BUT_ACCESS_BLOCKED] MERMAID: Observation-level / sites access remains blocked (HTTP 401 on sites).
+- [NO_DATA] INTEGRATED: THERMAL_GROUND_TRUTH = NOT_AVAILABLE. No local temperature measurement.
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Three of four documented NOAA cell centers were not retrieved.
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_7day_sst_trend
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_bleaching_alert_area_daily
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_mmm_climatology
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Spot has no reference time. Temporal association stays UNKNOWN.
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Grid CRS is UNKNOWN. Production association stays UNKNOWN.
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: No in-situ measurement at this spot.
+- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Retrieval timestamp is a calendar date without a sub-second clock.
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: ALLEN_SPATIAL_COVERAGE = NOT_AVAILABLE for the DEMO Spot. Coordinates were not moved.
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: reef_mask
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: satellite_derived_depth
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: turbidity
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: Feature geometry is null in the stored extracts. Polygon→Spot overlay is not available.
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: product_version and map_epoch are UNKNOWN on the stored features.
+- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: No source quality or classification confidence is in the attribute extract.
+- [SOURCE_REPORTED] MERMAID: No MERMAID coordinate equals the DEMO Spot. Spatial compatibility stays UNKNOWN.
+- [SOURCE_REPORTED] MERMAID: No temporally associated MERMAID row was selected for the DEMO Spot.
+- [SOURCE_REPORTED] MERMAID: sites endpoint HTTP 401. Observation-level rows were not read.
+- [SOURCE_REPORTED] MERMAID: No compatible field observation for this Spot. Absence is not 'healthy' or 'no bleaching'.
+- [SOURCE_REPORTED] MERMAID: Summary response bodies were not stored; only SHA-256 and redacted fields remain.
+- [SOURCE_REPORTED] MERMAID: Heron Island name query count 0.
+
+SOURCE CONFLICTS
+- SOURCE_DIFFERENCE: CRW internal anomaly comparison; resolved=False
+- NO_DIRECT_CONFLICT: CRW availability=DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY; MERMAID=DATA EXISTS BUT NO COMPATIBLE MATCH. Missing field observation is not disagreement with CRW, and does not validate CRW.
+- NO_DIRECT_CONFLICT: Allen class is not attached to the DEMO Spot and/or no compatible MERMAID field observation exists. Sources remain separate; no source-of-truth chosen.
+
+ESTIMATED: NONE
+DOWNSCALING: NOT_AUTHORIZED
+ML_IMPLEMENTATION: NOT_AUTHORIZED
+No thermal_risk_score.
+No Decision. No Action. No BALIZA alert from this integration.

@@ -1,0 +1,368 @@
+{
+  "spot": {
+    "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+    "label": "DEMONSTRATION / RESEARCH TEST SPOT",
+    "geometry_type": "POINT",
+    "latitude": -23.5,
+    "longitude": 152.0,
+    "crs": "UNKNOWN",
+    "spatial_precision": "UNKNOWN"
+  },
+  "source": "ALLEN_CORAL_ATLAS",
+  "discovery": {
+    "source": "ALLEN_CORAL_ATLAS",
+    "endpoint": "https://allencoralatlas.org/geoserver/ows",
+    "service_type": "WFS",
+    "wfs_version": "2.0.0",
+    "discovery_mode": "VERIFIED_CATALOG",
+    "authentication": "None required for the verified WFS attribute reads.",
+    "portal_login": "Not used. Automation of the website package download is not permitted.",
+    "available": [
+      {
+        "type_name": "coral-atlas:benthic_data_verbose",
+        "product": "benthic_data_verbose",
+        "layer": "benthic",
+        "file": "benthic_bbox.json",
+        "scientific_role": "mapped_benthic_classification",
+        "epistemic": "CONTEXT_ONLY",
+        "transformation_type": "MODEL_ESTIMATED",
+        "transformation_origin": "PROVIDER",
+        "note": "Provider map classification. Not a BALIZA estimate and not a field observation.",
+        "status": "AVAILABLE"
+      },
+      {
+        "type_name": "coral-atlas:geomorphic_data_verbose",
+        "product": "geomorphic_data_verbose",
+        "layer": "geomorphic",
+        "file": "geomorphic_bbox.json",
+        "scientific_role": "mapped_geomorphic_zone",
+        "epistemic": "CONTEXT_ONLY",
+        "transformation_type": "MODEL_ESTIMATED",
+        "transformation_origin": "PROVIDER",
+        "note": "Provider map classification. Not a field observation.",
+        "status": "AVAILABLE"
+      }
+    ],
+    "not_available": [
+      {
+        "product_id": "reef_mask",
+        "status": "NOT_AVAILABLE",
+        "reason": "Not present on the verified WFS layers used by BALIZA."
+      },
+      {
+        "product_id": "satellite_derived_depth",
+        "status": "NOT_AVAILABLE",
+        "reason": "Bathymetry is download-only on the portal; not on the verified WFS."
+      },
+      {
+        "product_id": "turbidity",
+        "status": "NOT_AVAILABLE",
+        "reason": "Turbidity is not on the verified WFS layers."
+      }
+    ],
+    "license": "FAQ: maps, bathymetry and map statistics \u00a9 2018-2023 Allen Coral Atlas Partnership and Arizona State University, CC BY 4.0. Website Terms of Use prohibit robot retrieval of the Site. Global habitat-map reproduction may need written consent.",
+    "attribution": "Allen Coral Atlas (2022). Imagery, maps and monitoring of the world's tropical coral reefs. https://doi.org/10.5281/zenodo.3833242",
+    "service_default_crs": "urn:ogc:def:crs:EPSG::4326",
+    "request_bbox": {
+      "min_lat": -23.48,
+      "min_lon": 151.97,
+      "max_lat": -23.47,
+      "max_lon": 151.98,
+      "crs": "urn:ogc:def:crs:EPSG::4326",
+      "bbox_param": "-23.48,151.97,-23.47,151.98"
+    }
+  },
+  "allen_spatial_coverage": "NOT_AVAILABLE",
+  "class_attached_to_spot": false,
+  "field_observation": false,
+  "external_indicators": [],
+  "context_layers_available_elsewhere": [
+    {
+      "indicator": {
+        "source": "ALLEN_CORAL_ATLAS",
+        "source_label": "Allen Coral Atlas",
+        "product": "benthic_data_verbose",
+        "layer": "benthic",
+        "type_name": "coral-atlas:benthic_data_verbose",
+        "class_counts": {
+          "Coral/Algae": 23,
+          "Rock": 9,
+          "Rubble": 3,
+          "Sand": 11,
+          "Seagrass": 1
+        },
+        "feature_count": 47,
+        "unit": "class_name / area_sqkm where present",
+        "original_unit": "class_name",
+        "canonical_unit": null,
+        "conversion": "none",
+        "conversion_applied": false,
+        "scientific_layer": "CONTEXT_ONLY",
+        "epistemic_label": "FACT",
+        "scientific_role": "mapped_benthic_classification",
+        "transformation_type": "MODEL_ESTIMATED",
+        "transformation_origin": "PROVIDER",
+        "measured": false,
+        "field_observation": false,
+        "estimated": "NONE",
+        "epoch": "UNKNOWN",
+        "product_version": "UNKNOWN",
+        "native_resolution": "UNKNOWN",
+        "feature_crs": "UNKNOWN",
+        "service_default_crs": "urn:ogc:def:crs:EPSG::4326",
+        "spatial_precision": "UNKNOWN",
+        "temporal_precision": "UNKNOWN",
+        "temporal_semantics": "MAP_EPOCH",
+        "map_epoch_is_observation_time": false,
+        "observation_time": "UNKNOWN",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN"
+        },
+        "uncertainty": {
+          "measurement": "UNKNOWN",
+          "spatial": "UNKNOWN",
+          "temporal": "UNKNOWN",
+          "association": "UNKNOWN",
+          "model": "UNKNOWN"
+        },
+        "note": "Provider map classification. Not a BALIZA estimate and not a field observation.",
+        "parser_version": "phase79-allen-1",
+        "normalization_version": "phase79-normalize-1"
+      },
+      "provenance": {
+        "source": "ALLEN_CORAL_ATLAS",
+        "source_label": "Allen Coral Atlas",
+        "product": "benthic_data_verbose",
+        "layer": "benthic",
+        "version": "UNKNOWN",
+        "epoch": "UNKNOWN",
+        "retrieval_timestamp": "2026-10-01T07:46:05.256Z",
+        "source_url": "https://allencoralatlas.org/geoserver/ows",
+        "download_parameters": {
+          "service": "WFS",
+          "version": "2.0.0",
+          "request": "GetFeature",
+          "typeNames": "coral-atlas:benthic_data_verbose",
+          "propertyName": "class_name,area_sqkm",
+          "outputFormat": "application/json",
+          "bbox": "-23.48,151.97,-23.47,151.98",
+          "crs": "urn:ogc:def:crs:EPSG::4326"
+        },
+        "file_format": "JSON",
+        "raw_file": "benthic_bbox.json",
+        "raw_checksum_sha256": "9c8e75badd8ef73073f3fe0130360fb5878e2674a65d3bee87dabbca7f6beda9",
+        "size": 7891,
+        "content_type": "application/json",
+        "license": "FAQ: maps, bathymetry and map statistics \u00a9 2018-2023 Allen Coral Atlas Partnership and Arizona State University, CC BY 4.0. Website Terms of Use prohibit robot retrieval of the Site. Global habitat-map reproduction may need written consent.",
+        "attribution": "Allen Coral Atlas (2022). Imagery, maps and monitoring of the world's tropical coral reefs. https://doi.org/10.5281/zenodo.3833242",
+        "parser_version": "phase79-allen-1",
+        "normalization_version": "phase79-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": {
+          "source_crs": "UNKNOWN",
+          "feature_crs": "UNKNOWN",
+          "service_default_crs": "urn:ogc:def:crs:EPSG::4326",
+          "normalized_crs": "UNKNOWN",
+          "transformation": "NONE",
+          "transformation_method": "NONE"
+        }
+      },
+      "geometry_present_count": 0,
+      "class_counts": {
+        "Coral/Algae": 23,
+        "Rock": 9,
+        "Rubble": 3,
+        "Sand": 11,
+        "Seagrass": 1
+      }
+    },
+    {
+      "indicator": {
+        "source": "ALLEN_CORAL_ATLAS",
+        "source_label": "Allen Coral Atlas",
+        "product": "geomorphic_data_verbose",
+        "layer": "geomorphic",
+        "type_name": "coral-atlas:geomorphic_data_verbose",
+        "class_counts": {
+          "Inner Reef Flat": 4,
+          "Outer Reef Flat": 6,
+          "Plateau": 1,
+          "Reef Crest": 7,
+          "Reef Slope": 4,
+          "Sheltered Reef Slope": 4
+        },
+        "feature_count": 26,
+        "unit": "class_name / area_sqkm where present",
+        "original_unit": "class_name",
+        "canonical_unit": null,
+        "conversion": "none",
+        "conversion_applied": false,
+        "scientific_layer": "CONTEXT_ONLY",
+        "epistemic_label": "FACT",
+        "scientific_role": "mapped_geomorphic_zone",
+        "transformation_type": "MODEL_ESTIMATED",
+        "transformation_origin": "PROVIDER",
+        "measured": false,
+        "field_observation": false,
+        "estimated": "NONE",
+        "epoch": "UNKNOWN",
+        "product_version": "UNKNOWN",
+        "native_resolution": "UNKNOWN",
+        "feature_crs": "UNKNOWN",
+        "service_default_crs": "urn:ogc:def:crs:EPSG::4326",
+        "spatial_precision": "UNKNOWN",
+        "temporal_precision": "UNKNOWN",
+        "temporal_semantics": "MAP_EPOCH",
+        "map_epoch_is_observation_time": false,
+        "observation_time": "UNKNOWN",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN"
+        },
+        "uncertainty": {
+          "measurement": "UNKNOWN",
+          "spatial": "UNKNOWN",
+          "temporal": "UNKNOWN",
+          "association": "UNKNOWN",
+          "model": "UNKNOWN"
+        },
+        "note": "Provider map classification. Not a field observation.",
+        "parser_version": "phase79-allen-1",
+        "normalization_version": "phase79-normalize-1"
+      },
+      "provenance": {
+        "source": "ALLEN_CORAL_ATLAS",
+        "source_label": "Allen Coral Atlas",
+        "product": "geomorphic_data_verbose",
+        "layer": "geomorphic",
+        "version": "UNKNOWN",
+        "epoch": "UNKNOWN",
+        "retrieval_timestamp": "2026-10-01T07:46:05.474Z",
+        "source_url": "https://allencoralatlas.org/geoserver/ows",
+        "download_parameters": {
+          "service": "WFS",
+          "version": "2.0.0",
+          "request": "GetFeature",
+          "typeNames": "coral-atlas:geomorphic_data_verbose",
+          "propertyName": "class_name,area_sqkm",
+          "outputFormat": "application/json",
+          "bbox": "-23.48,151.97,-23.47,151.98",
+          "crs": "urn:ogc:def:crs:EPSG::4326"
+        },
+        "file_format": "JSON",
+        "raw_file": "geomorphic_bbox.json",
+        "raw_checksum_sha256": "f06c0b7ad90c10942c0d1c3fab3148db075421f0eed1b82f2c0ade32ae2e5a58",
+        "size": 4646,
+        "content_type": "application/json",
+        "license": "FAQ: maps, bathymetry and map statistics \u00a9 2018-2023 Allen Coral Atlas Partnership and Arizona State University, CC BY 4.0. Website Terms of Use prohibit robot retrieval of the Site. Global habitat-map reproduction may need written consent.",
+        "attribution": "Allen Coral Atlas (2022). Imagery, maps and monitoring of the world's tropical coral reefs. https://doi.org/10.5281/zenodo.3833242",
+        "parser_version": "phase79-allen-1",
+        "normalization_version": "phase79-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": {
+          "source_crs": "UNKNOWN",
+          "feature_crs": "UNKNOWN",
+          "service_default_crs": "urn:ogc:def:crs:EPSG::4326",
+          "normalized_crs": "UNKNOWN",
+          "transformation": "NONE",
+          "transformation_method": "NONE"
+        }
+      },
+      "geometry_present_count": 0,
+      "class_counts": {
+        "Inner Reef Flat": 4,
+        "Outer Reef Flat": 6,
+        "Plateau": 1,
+        "Reef Crest": 7,
+        "Reef Slope": 4,
+        "Sheltered Reef Slope": 4
+      }
+    }
+  ],
+  "measured": [],
+  "estimated": "NONE",
+  "downscaling": "NOT_AUTHORIZED",
+  "ml_implementation": "NOT_AUTHORIZED",
+  "local_estimation": "NOT_AUTHORIZED",
+  "alerts": [],
+  "spatial_association": {
+    "association_type": "UNKNOWN",
+    "comparison_performed": false,
+    "overlap_fraction": "UNKNOWN",
+    "reason": "The stored Allen WFS bbox does not contain this DEMO Spot. Coordinates were not changed. Feature geometry is null, so no polygon overlay exists."
+  },
+  "temporal_association": {
+    "association_type": "UNKNOWN",
+    "temporal_semantics": "MAP_EPOCH",
+    "map_epoch": "UNKNOWN",
+    "observation_time": "UNKNOWN",
+    "map_epoch_is_observation_time": false
+  },
+  "quality": {
+    "source_quality": "UNKNOWN",
+    "baliza_quality": "UNKNOWN",
+    "association_quality": "UNKNOWN"
+  },
+  "freshness": {
+    "retrieval_freshness": "2026-10-01T07:46:05.256Z",
+    "scientific_temporal_currency": "UNKNOWN",
+    "note": "A recent retrieval does not make a map epoch current."
+  },
+  "uncertainty": {
+    "measurement": "UNKNOWN",
+    "spatial": "UNKNOWN",
+    "temporal": "UNKNOWN",
+    "association": "UNKNOWN",
+    "model": "UNKNOWN"
+  },
+  "evidence": [],
+  "data_gaps": [
+    {
+      "kind": "SPATIAL_GAP",
+      "detail": "ALLEN_SPATIAL_COVERAGE = NOT_AVAILABLE for the DEMO Spot. Coordinates were not moved."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "reef_mask",
+      "reason": "Not present on the verified WFS layers used by BALIZA."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "satellite_derived_depth",
+      "reason": "Bathymetry is download-only on the portal; not on the verified WFS."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "turbidity",
+      "reason": "Turbidity is not on the verified WFS layers."
+    },
+    {
+      "kind": "SPATIAL_GAP",
+      "detail": "Feature geometry is null in the stored extracts. Polygon\u2192Spot overlay is not available."
+    },
+    {
+      "kind": "PROVENANCE_GAP",
+      "detail": "product_version and map_epoch are UNKNOWN on the stored features."
+    },
+    {
+      "kind": "QUALITY_GAP",
+      "detail": "No source quality or classification confidence is in the attribute extract."
+    }
+  ],
+  "baliza_alert_separation": {
+    "allen_is_baliza_alert": false,
+    "note": "Allen provides mapped context. It does not create a BALIZA alert."
+  },
+  "demo_spot_coordinates_unchanged": true
+}

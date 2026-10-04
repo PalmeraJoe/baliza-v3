@@ -497,3 +497,99 @@ def get_outcome(outcome_id: str, request: Request) -> dict:
         "notes": outcome.notes,
         "observed_outcome_at": outcome.observed_outcome_at.isoformat(),
     }
+
+
+@router.get("/scientific/crw/discovery")
+def crw_discovery() -> dict:
+    """Verified CRW catalog. Does not download and does not create an alert."""
+    from baliza.infrastructure.sources.crw.adapter import CrwAdapter
+
+    return CrwAdapter().discover(live=False)
+
+
+@router.get("/scientific/spots/{spot_id}/crw")
+def crw_spot_intelligence(spot_id: str) -> dict:
+    """CRW Spot Intelligence from stored official files. ESTIMATED stays NONE."""
+    from pathlib import Path
+
+    from baliza.infrastructure.sources.crw.catalog import DEMO_SPOT
+    from baliza.infrastructure.sources.crw.spot_intelligence import build_crw_spot_intelligence
+
+    if spot_id != DEMO_SPOT["spot_id"]:
+        raise HTTPException(status_code=404, detail="Only the demonstration CRW spot is available in this phase.")
+    root = Path(__file__).resolve().parents[4]
+    return build_crw_spot_intelligence(
+        root / "data" / "phase75" / "raw",
+        root / "data" / "phase75" / "provenance.json",
+    )
+
+
+@router.get("/scientific/allen/discovery")
+def allen_discovery() -> dict:
+    """Verified Allen WFS catalog. Does not download and does not create an alert."""
+    from baliza.infrastructure.sources.allen.adapter import AllenAdapter
+
+    return AllenAdapter().discover(live=False)
+
+
+@router.get("/scientific/spots/{spot_id}/allen")
+def allen_spot_intelligence(spot_id: str) -> dict:
+    """Allen Spot Intelligence from stored WFS extracts. ESTIMATED stays NONE."""
+    from pathlib import Path
+
+    from baliza.infrastructure.sources.allen.catalog import ALLEN_RESEARCH_TEST_SPOT, DEMO_SPOT
+    from baliza.infrastructure.sources.allen.spot_intelligence import build_allen_spot_intelligence
+
+    if spot_id not in {DEMO_SPOT["spot_id"], ALLEN_RESEARCH_TEST_SPOT["spot_id"]}:
+        raise HTTPException(status_code=404, detail="Allen Spot Intelligence is only available for the DEMO or research-test Spot.")
+    root = Path(__file__).resolve().parents[4]
+    return build_allen_spot_intelligence(
+        root / "data" / "phase75" / "allen" / "raw",
+        root / "data" / "phase75" / "allen" / "provenance.json",
+        spot_id=spot_id,
+    )
+
+
+@router.get("/scientific/mermaid/discovery")
+def mermaid_discovery() -> dict:
+    """Verified MERMAID catalog. Does not download and does not create an alert."""
+    from baliza.infrastructure.sources.mermaid.adapter import MermaidAdapter
+
+    return MermaidAdapter().discover(live=False)
+
+
+@router.get("/scientific/spots/{spot_id}/mermaid")
+def mermaid_spot_intelligence(spot_id: str) -> dict:
+    """MERMAID Spot Intelligence from stored official summaries. ESTIMATED stays NONE."""
+    from pathlib import Path
+
+    from baliza.infrastructure.sources.mermaid.catalog import DEMO_SPOT
+    from baliza.infrastructure.sources.mermaid.spot_intelligence import build_mermaid_spot_intelligence
+
+    if spot_id != DEMO_SPOT["spot_id"]:
+        raise HTTPException(status_code=404, detail="Only the demonstration Spot is available for MERMAID in this phase.")
+    root = Path(__file__).resolve().parents[4]
+    return build_mermaid_spot_intelligence(
+        root / "data" / "phase763" / "mermaid-inquiry.json",
+        root / "data" / "phase763" / "mermaid-australia-summary.json",
+        spot_id=spot_id,
+    )
+
+
+@router.get("/scientific/spots/{spot_id}/intelligence")
+def integrated_spot_intelligence(spot_id: str) -> dict:
+    """Canonical integrated Spot Intelligence (CRW + Allen + MERMAID). ESTIMATED stays NONE."""
+    from pathlib import Path
+
+    from baliza.infrastructure.sources.crw.catalog import DEMO_SPOT
+    from baliza.infrastructure.sources.integrated.spot_intelligence import (
+        build_integrated_spot_intelligence,
+    )
+
+    if spot_id != DEMO_SPOT["spot_id"]:
+        raise HTTPException(
+            status_code=404,
+            detail="Integrated Spot Intelligence is only available for the demonstration Spot in this phase.",
+        )
+    root = Path(__file__).resolve().parents[4]
+    return build_integrated_spot_intelligence(root, spot_id=spot_id)

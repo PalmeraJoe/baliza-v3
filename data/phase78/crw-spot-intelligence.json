@@ -1,0 +1,1031 @@
+{
+  "spot": {
+    "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+    "label": "DEMONSTRATION / RESEARCH TEST SPOT",
+    "geometry_type": "POINT",
+    "latitude": -23.5,
+    "longitude": 152.0,
+    "crs": "UNKNOWN",
+    "spatial_precision": "UNKNOWN",
+    "source": "NOAA orig24_names.txt heritage coordinate. Not a resort survey."
+  },
+  "source": "NOAA_CORAL_REEF_WATCH",
+  "discovery": {
+    "source": "NOAA_CORAL_REEF_WATCH",
+    "endpoint": "https://coastwatch.noaa.gov/erddap/",
+    "available": [
+      {
+        "dataset_id": "noaacrwsstDaily",
+        "what": "crw_coraltemp_sst",
+        "variable": "analysed_sst",
+        "version": "CoralTemp-v3.1",
+        "product_version_attr": "3.1",
+        "method": "CRW CoralTemp gap-filled foundation SST",
+        "scientific_role": "temperature_indicator",
+        "native_unit_example": "degree_C",
+        "status": "AVAILABLE"
+      },
+      {
+        "dataset_id": "noaacrwsstanomalyDaily",
+        "what": "crw_sst_anomaly_v31",
+        "variable": "sea_surface_temperature_anomaly",
+        "version": "Satellite_Daily_Global_5km_SST_Anomaly",
+        "product_version_attr": "3.1",
+        "method": "CRW v3.1 SST anomaly",
+        "scientific_role": "anomaly_indicator",
+        "native_unit_example": "degree_C",
+        "status": "AVAILABLE"
+      },
+      {
+        "dataset_id": "noaacrwsstanomalybaselineDaily",
+        "what": "crw_sst_anomaly_1991_2020",
+        "variable": "sea_surface_temperature_anomaly",
+        "version": "1991-2020 climatological baseline",
+        "product_version_attr": "3.1",
+        "method": "CRW SST anomaly on the 1991-2020 baseline",
+        "scientific_role": "anomaly_indicator",
+        "native_unit_example": "degree_Celsius",
+        "status": "AVAILABLE"
+      },
+      {
+        "dataset_id": "noaacrwhotspotDaily",
+        "what": "crw_hotspot",
+        "variable": "hotspot",
+        "version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+        "product_version_attr": "3.1",
+        "method": "CRW HotSpot grid as published on this ERDDAP dataset",
+        "scientific_role": "thermal_stress_indicator",
+        "native_unit_example": "degree_C",
+        "status": "AVAILABLE"
+      },
+      {
+        "dataset_id": "noaacrwdhwDaily",
+        "what": "crw_dhw",
+        "variable": "degree_heating_week",
+        "version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+        "product_version_attr": "3.1",
+        "method": "CRW Degree Heating Week grid",
+        "scientific_role": "accumulated_thermal_stress_indicator",
+        "native_unit_example": "degree_Celsius_weeks",
+        "status": "AVAILABLE"
+      },
+      {
+        "dataset_id": "noaacrwbaa7dDaily",
+        "what": "crw_bleaching_alert_area_7d",
+        "variable": "bleaching_alert_area",
+        "version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+        "product_version_attr": "3.1",
+        "method": "CRW 7-day maximum Bleaching Alert Area, external class code",
+        "scientific_role": "external_noaa_alert_area_indicator",
+        "native_unit_example": "stress_level",
+        "baliza_alert": "NO",
+        "status": "AVAILABLE"
+      }
+    ],
+    "not_available": [
+      {
+        "product_id": "crw_7day_sst_trend",
+        "status": "NOT_AVAILABLE",
+        "reason": "Not in the verified CoastWatch ERDDAP CRW list. Product page exists; no file retrieved.",
+        "scientific_role": "temporal_change_indicator"
+      },
+      {
+        "product_id": "crw_bleaching_alert_area_daily",
+        "status": "NOT_AVAILABLE",
+        "reason": "Single-day BAA not retrieved. Only the 7-day composite dataset was stored.",
+        "scientific_role": "external_noaa_alert_area_indicator"
+      },
+      {
+        "product_id": "crw_mmm_climatology",
+        "status": "NOT_AVAILABLE",
+        "reason": "MMM climatology grid was not obtained as a file in the verified ERDDAP list.",
+        "scientific_role": "reference_baseline_indicator"
+      }
+    ],
+    "live_probe": null,
+    "discovery_mode": "VERIFIED_CATALOG"
+  },
+  "external_indicators": [
+    {
+      "dataset_id": "noaacrwsstDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_coraltemp_sst",
+        "value": "22.72",
+        "unit": "degree_C",
+        "original_unit": "degree_C",
+        "canonical_unit": "degC",
+        "conversion": "identity",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwsstDaily",
+        "source_version": "CoralTemp-v3.1",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW CoralTemp gap-filled foundation SST",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN",
+          "quality_note": "The ERDDAP row contains no quality flag."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwsstDaily",
+          "version": "CoralTemp-v3.1",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "temperature_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwsstDaily",
+        "product_version": "CoralTemp-v3.1",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstDaily.csv?analysed_sst%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "analysed_sst"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwsstDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwsstDaily",
+        "product": {
+          "what": "crw_coraltemp_sst",
+          "variable": "analysed_sst",
+          "version": "CoralTemp-v3.1",
+          "product_version_attr": "3.1",
+          "method": "CRW CoralTemp gap-filled foundation SST",
+          "scientific_role": "temperature_indicator",
+          "native_unit_example": "degree_C"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwsstDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "CoralTemp-v3.1",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2018-01-01T00:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    },
+    {
+      "dataset_id": "noaacrwsstanomalyDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_sst_anomaly_v31",
+        "value": "0.78",
+        "unit": "degree_C",
+        "original_unit": "degree_C",
+        "canonical_unit": "degC",
+        "conversion": "identity",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwsstanomalyDaily",
+        "source_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW v3.1 SST anomaly",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN",
+          "quality_note": "The ERDDAP row contains no quality flag."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwsstanomalyDaily",
+          "version": "Satellite_Daily_Global_5km_SST_Anomaly",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "anomaly_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwsstanomalyDaily",
+        "product_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.csv?sea_surface_temperature_anomaly%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "sea_surface_temperature_anomaly"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwsstanomalyDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwsstanomalyDaily",
+        "product": {
+          "what": "crw_sst_anomaly_v31",
+          "variable": "sea_surface_temperature_anomaly",
+          "version": "Satellite_Daily_Global_5km_SST_Anomaly",
+          "product_version_attr": "3.1",
+          "method": "CRW v3.1 SST anomaly",
+          "scientific_role": "anomaly_indicator",
+          "native_unit_example": "degree_C"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwsstanomalyDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "Satellite_Daily_Global_5km_SST_Anomaly",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2018-03-01T12:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    },
+    {
+      "dataset_id": "noaacrwsstanomalybaselineDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_sst_anomaly_1991_2020",
+        "value": "0.4",
+        "unit": "degree_Celsius",
+        "original_unit": "degree_Celsius",
+        "canonical_unit": "degC",
+        "conversion": "identity",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwsstanomalybaselineDaily",
+        "source_version": "1991-2020 climatological baseline",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW SST anomaly on the 1991-2020 baseline",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN",
+          "quality_note": "The ERDDAP row contains no quality flag."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwsstanomalybaselineDaily",
+          "version": "1991-2020 climatological baseline",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "anomaly_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwsstanomalybaselineDaily",
+        "product_version": "1991-2020 climatological baseline",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalybaselineDaily.csv?sea_surface_temperature_anomaly%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "sea_surface_temperature_anomaly"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwsstanomalybaselineDaily",
+        "product": {
+          "what": "crw_sst_anomaly_1991_2020",
+          "variable": "sea_surface_temperature_anomaly",
+          "version": "1991-2020 climatological baseline",
+          "product_version_attr": "3.1",
+          "method": "CRW SST anomaly on the 1991-2020 baseline",
+          "scientific_role": "anomaly_indicator",
+          "native_unit_example": "degree_Celsius"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwsstanomalybaselineDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "Satellite_Daily_Global_5km_SST_Anomaly",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2026-05-22T12:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    },
+    {
+      "dataset_id": "noaacrwhotspotDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_hotspot",
+        "value": "-4.39",
+        "unit": "degree_C",
+        "original_unit": "degree_C",
+        "canonical_unit": "degC",
+        "conversion": "identity",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwhotspotDaily",
+        "source_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW HotSpot grid as published on this ERDDAP dataset",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "QUESTIONABLE",
+          "association_quality": "UNKNOWN",
+          "quality_note": "Retrieved HotSpot is negative. The CRW methodology page defines HotSpot as max(SST - MMM, 0). This dataset comment does not state that clip. The value is kept as retrieved."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwhotspotDaily",
+          "version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "thermal_stress_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwhotspotDaily",
+        "product_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwhotspotDaily.csv?hotspot%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "hotspot"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwhotspotDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwhotspotDaily",
+        "product": {
+          "what": "crw_hotspot",
+          "variable": "hotspot",
+          "version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+          "product_version_attr": "3.1",
+          "method": "CRW HotSpot grid as published on this ERDDAP dataset",
+          "scientific_role": "thermal_stress_indicator",
+          "native_unit_example": "degree_C"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwhotspotDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2018-03-01T12:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    },
+    {
+      "dataset_id": "noaacrwdhwDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_dhw",
+        "value": "0.0",
+        "unit": "degree_Celsius_weeks",
+        "original_unit": "degree_Celsius_weeks",
+        "canonical_unit": null,
+        "conversion": "none",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwdhwDaily",
+        "source_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW Degree Heating Week grid",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN",
+          "quality_note": "The ERDDAP row contains no quality flag."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwdhwDaily",
+          "version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "accumulated_thermal_stress_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwdhwDaily",
+        "product_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwdhwDaily.csv?degree_heating_week%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "degree_heating_week"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwdhwDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwdhwDaily",
+        "product": {
+          "what": "crw_dhw",
+          "variable": "degree_heating_week",
+          "version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+          "product_version_attr": "3.1",
+          "method": "CRW Degree Heating Week grid",
+          "scientific_role": "accumulated_thermal_stress_indicator",
+          "native_unit_example": "degree_Celsius_weeks"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwdhwDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2018-03-01T12:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    },
+    {
+      "dataset_id": "noaacrwbaa7dDaily",
+      "indicator": {
+        "where": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "when": "2026-09-26T12:00:00Z",
+        "what": "crw_bleaching_alert_area_7d",
+        "value": "0",
+        "unit": "stress_level",
+        "original_unit": "stress_level",
+        "canonical_unit": null,
+        "conversion": "none",
+        "conversion_version": "phase78-celsius-labels-1",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "source_product": "noaacrwbaa7dDaily",
+        "source_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+        "resolution": "ERDDAP geospatial resolution attribute 0.049999999999999996 degrees",
+        "method": "CRW 7-day maximum Bleaching Alert Area, external class code",
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN",
+          "quality_note": "The ERDDAP row contains no quality flag."
+        },
+        "uncertainty": "UNKNOWN",
+        "provenance": {
+          "source": "NOAA_CORAL_REEF_WATCH",
+          "product": "noaacrwbaa7dDaily",
+          "version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+          "parser_version": "phase78-crw-1",
+          "normalization_version": "phase78-normalize-1"
+        },
+        "transformation_type": "DERIVED",
+        "spatial_precision": "GRID",
+        "temporal_precision": "DAY",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "scientific_role": "external_noaa_alert_area_indicator",
+        "baliza_alert": "NO",
+        "measured": false,
+        "estimated": "NONE"
+      },
+      "provenance": {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "source_label": "NOAA Coral Reef Watch",
+        "product": "noaacrwbaa7dDaily",
+        "product_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwbaa7dDaily.csv?bleaching_alert_area%5B(2026-09-26T12:00:00Z)%5D%5B(-23.475):(-23.475)%5D%5B(151.975):(151.975)%5D",
+        "download_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "variable": "bleaching_alert_area"
+        },
+        "file_format": "CSV",
+        "raw_file": "noaacrwbaa7dDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4",
+        "source_mode": "RAW_STORE",
+        "parser_version": "phase78-crw-1",
+        "normalization_version": "phase78-normalize-1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "crs": "UNKNOWN"
+      },
+      "metadata": {
+        "dataset_id": "noaacrwbaa7dDaily",
+        "product": {
+          "what": "crw_bleaching_alert_area_7d",
+          "variable": "bleaching_alert_area",
+          "version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+          "product_version_attr": "3.1",
+          "method": "CRW 7-day maximum Bleaching Alert Area, external class code",
+          "scientific_role": "external_noaa_alert_area_indicator",
+          "native_unit_example": "stress_level",
+          "baliza_alert": "NO"
+        },
+        "info_url": "https://coastwatch.noaa.gov/erddap/info/noaacrwbaa7dDaily/index.json",
+        "product_version_attr": "3.1",
+        "global_attributes": {
+          "product_version": "3.1",
+          "id": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+          "geospatial_lat_resolution": "0.049999999999999996",
+          "date_created": "2018-03-01T12:00:00Z"
+        }
+      },
+      "applies_to": "retrieved cell only",
+      "cell": {
+        "latitude": "-23.475",
+        "longitude": "151.975"
+      },
+      "spatial_association": {
+        "association_type": "UNKNOWN",
+        "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+        "comparison_performed": false
+      },
+      "temporal_association": {
+        "association_type": "UNKNOWN",
+        "source_time": "2026-09-26T12:00:00Z",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "ingestion_time": "2026-10-01",
+        "observation_time": "UNKNOWN",
+        "note": "Grid time is not relabeled as an observation time."
+      }
+    }
+  ],
+  "measured": [],
+  "estimated": "NONE",
+  "downscaling": "NOT_AUTHORIZED",
+  "ml_implementation": "NOT_AUTHORIZED",
+  "alerts": [],
+  "playbook_options": [],
+  "quality": [
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "association_quality": "UNKNOWN",
+      "quality_note": "The ERDDAP row contains no quality flag."
+    },
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "association_quality": "UNKNOWN",
+      "quality_note": "The ERDDAP row contains no quality flag."
+    },
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "association_quality": "UNKNOWN",
+      "quality_note": "The ERDDAP row contains no quality flag."
+    },
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "QUESTIONABLE",
+      "association_quality": "UNKNOWN",
+      "quality_note": "Retrieved HotSpot is negative. The CRW methodology page defines HotSpot as max(SST - MMM, 0). This dataset comment does not state that clip. The value is kept as retrieved."
+    },
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "association_quality": "UNKNOWN",
+      "quality_note": "The ERDDAP row contains no quality flag."
+    },
+    {
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "association_quality": "UNKNOWN",
+      "quality_note": "The ERDDAP row contains no quality flag."
+    }
+  ],
+  "freshness": {
+    "product_time": "2026-09-26T12:00:00Z",
+    "retrieval_time": "2026-10-01",
+    "reference_time": "UNKNOWN",
+    "freshness_status": "UNKNOWN",
+    "note": "No freshness cutoff is authorized in this phase."
+  },
+  "uncertainty": {
+    "measurement": "UNKNOWN",
+    "spatial": "UNKNOWN",
+    "temporal": "UNKNOWN",
+    "association": "UNKNOWN",
+    "model": "NOT_APPLICABLE"
+  },
+  "evidence": [
+    {
+      "evidence_id": "crw-noaacrwsstDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwsstDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9",
+      "product_version": "CoralTemp-v3.1",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    },
+    {
+      "evidence_id": "crw-noaacrwsstanomalyDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwsstanomalyDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+      "product_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    },
+    {
+      "evidence_id": "crw-noaacrwsstanomalybaselineDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+      "product_version": "1991-2020 climatological baseline",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    },
+    {
+      "evidence_id": "crw-noaacrwhotspotDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwhotspotDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3",
+      "product_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    },
+    {
+      "evidence_id": "crw-noaacrwdhwDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwdhwDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86",
+      "product_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    },
+    {
+      "evidence_id": "crw-noaacrwbaa7dDaily",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "raw_file": "noaacrwbaa7dDaily_2026-09-26.csv",
+      "raw_checksum_sha256": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4",
+      "product_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+      "transformation_chain": [
+        "RAW",
+        "PARSE",
+        "NORMALIZE"
+      ],
+      "baliza_alert": "NO"
+    }
+  ],
+  "spatial_associations": {
+    "production": {
+      "pixel_count": 4,
+      "valued_cells": 1,
+      "averaged_value": null,
+      "nearest_selected": false,
+      "interpolated": false,
+      "association_type": "UNKNOWN",
+      "pixels": [
+        {
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "retrieved": true,
+          "values": "see external_indicators",
+          "scientific_layer": "EXTERNAL_INDICATOR"
+        },
+        {
+          "latitude": -23.475,
+          "longitude": 152.025,
+          "retrieved": false,
+          "values": "UNKNOWN",
+          "scientific_layer": "EXTERNAL_INDICATOR"
+        },
+        {
+          "latitude": -23.525,
+          "longitude": 151.975,
+          "retrieved": false,
+          "values": "UNKNOWN",
+          "scientific_layer": "EXTERNAL_INDICATOR"
+        },
+        {
+          "latitude": -23.525,
+          "longitude": 152.025,
+          "retrieved": false,
+          "values": "UNKNOWN",
+          "scientific_layer": "EXTERNAL_INDICATOR"
+        }
+      ],
+      "note": "Four documented centers. One retrieved. CRS unknown, so intersection is not confirmed."
+    },
+    "test_four_pixel_boundary": {
+      "label": "Cell values stay external. No local measurement is inferred.",
+      "association_type": "INTERSECTS",
+      "hit_count": 4,
+      "local_estimate": "NOT_AUTHORIZED",
+      "averaged_value": null,
+      "values": [
+        "retrieved",
+        null,
+        null,
+        null
+      ]
+    }
+  },
+  "data_gaps": [
+    {
+      "kind": "DATA_GAP",
+      "detail": "Three of four documented NOAA cell centers were not retrieved."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "crw_7day_sst_trend",
+      "reason": "Not in the verified CoastWatch ERDDAP CRW list. Product page exists; no file retrieved."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "crw_bleaching_alert_area_daily",
+      "reason": "Single-day BAA not retrieved. Only the 7-day composite dataset was stored."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "crw_mmm_climatology",
+      "reason": "MMM climatology grid was not obtained as a file in the verified ERDDAP list."
+    },
+    {
+      "kind": "TEMPORAL_GAP",
+      "detail": "Spot has no reference time. Temporal association stays UNKNOWN."
+    },
+    {
+      "kind": "SPATIAL_GAP",
+      "detail": "Grid CRS is UNKNOWN. Production association stays UNKNOWN."
+    },
+    {
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "No in-situ measurement at this spot."
+    },
+    {
+      "kind": "PROVENANCE_GAP",
+      "detail": "Retrieval timestamp is a calendar date without a sub-second clock."
+    }
+  ],
+  "source_conflicts": [
+    {
+      "dimension": "SST anomaly on the retrieved cell",
+      "conflict": true,
+      "resolved": false,
+      "products": [
+        "crw_sst_anomaly_v31",
+        "crw_sst_anomaly_1991_2020"
+      ],
+      "values": [
+        "0.78",
+        "0.4"
+      ]
+    }
+  ],
+  "baliza_alert_separation": {
+    "crw_bleaching_alert_area_is_baliza_alert": false,
+    "note": "CRW Bleaching Alert Area remains EXTERNAL_INDICATOR. Only an existing BALIZA RuleVersion may create a BALIZA alert."
+  }
+}

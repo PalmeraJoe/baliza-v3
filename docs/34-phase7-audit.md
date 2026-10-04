@@ -317,3 +317,39 @@ PHASE 7.6.6 EVIDENCE CHAIN OPERATIONAL CLOSURE — SCIENTIFIC ESTIMATION / DOWNS
 `docs/51-phase7.7-scientific-target-ground-truth-applicability.md` reviews the stored NOAA, Allen, EMODnet, MERMAID, and resort evidence against four candidate targets. None is eligible. No local estimate is produced. Resort history stays out of base training. No model was implemented.
 
 PHASE 7.7 SCIENTIFIC TARGET, GROUND TRUTH & APPLICABILITY — ML IMPLEMENTATION NOT AUTHORIZED.
+
+## PHASE 7.8 STATUS
+
+`docs/52-phase7.8-noaa-crw-real-data-pipeline.md` adds the CRW infrastructure adapter over the stored CoastWatch ERDDAP files. Six products are normalized as external indicators. Raw checksums are verified and never overwritten. The demonstration Spot lists four candidate cells and one retrieved value. CRW Bleaching Alert Area stays external. No local estimate, downscaling, ML, or new BALIZA alert threshold was added.
+
+PHASE 7.8 NOAA CORAL REEF WATCH REAL DATA PIPELINE — ESTIMATED NONE; DOWNSCALING / ML NOT AUTHORIZED.
+
+## PHASE 7.9 STATUS
+
+`docs/53-phase7.9-allen-coral-atlas-real-data-pipeline.md` adds the Allen WFS infrastructure adapter over the stored benthic and geomorphic attribute extracts. The DEMO Spot keeps its coordinates and has no Allen coverage. A separate research-test Spot only proves the extract parses. Map classes stay CONTEXT_ONLY. Reef mask, depth, and turbidity remain unavailable on this WFS. No estimate, alert, or ML was added.
+
+PHASE 7.9 ALLEN CORAL ATLAS REAL DATA PIPELINE — ESTIMATED NONE; DOWNSCALING / ML NOT AUTHORIZED.
+
+## PHASE 7.10 STATUS
+
+`docs/54-phase7.10-mermaid-real-data-pipeline.md` adds the MERMAID infrastructure adapter over the stored unauthenticated summary inquiry and Australia page. The DEMO Spot keeps its coordinates and has no compatible MERMAID match. Spatial and temporal compatibility stay UNKNOWN. Summary protocol names are not observation-level values on the Spot. Bleaching is not thermal ground truth. No estimate, alert, or ML was added.
+
+PHASE 7.10 MERMAID REAL DATA PIPELINE — ESTIMATED NONE; DOWNSCALING / ML NOT AUTHORIZED.
+
+## PHASE 7.11 STATUS
+
+`docs/55-phase7.11-integrated-spot-intelligence.md` consolidates CRW, Allen, and MERMAID into one machine-readable and human-readable Spot Intelligence for the DEMO heritage point. Epistemic layers stay separate. MERMAID absence is data-exists-but-no-compatible-match, not no bleaching. No risk score, alert, decision, estimate, or ML was added.
+
+PHASE 7.11 INTEGRATED SPOT INTELLIGENCE & SCIENTIFIC EVIDENCE CLOSURE — ESTIMATED NONE; DOWNSCALING / ML NOT AUTHORIZED.
+
+## PHASE 7.12 STATUS
+
+`docs/56-phase7.12-end-to-end-scientific-dss-integration.md` runs the DEMO Spot from integrated Spot Intelligence through evidence, DEMO/NON-SCIENTIFIC indicator and rule, alert, DSS package, frozen snapshot, human decision, action, and outcome. CRW stays EXTERNAL_INDICATOR. MERMAID no-match stays a data gap. No ML, downscaling, IMR, or autonomous action was added.
+
+PHASE 7.12 END-TO-END SCIENTIFIC DSS INTEGRATION — ESTIMATED NONE; DOWNSCALING / ML / IMR NOT AUTHORIZED.
+
+## PHASE 7.13 STATUS
+
+`docs/57-phase7.13-pilot-readiness-review.md` records the Pilot Readiness Review. Product/DSS is ready with scientific data limitations. Scientific pilot is a conditional go. Local prediction and ML remain not authorized. IMR is not a dependency of the current product foundation and is required for the scientific validation phase. No IMR connector, ML, or new scientific thresholds were added. Provenance, quality, freshness, and uncertainty stay PARTIAL.
+
+PHASE 7.13 PILOT READINESS REVIEW — PRODUCT GO (LIMITATIONS); SCIENTIFIC PILOT CONDITIONAL GO; ML NOT_AUTHORIZED.

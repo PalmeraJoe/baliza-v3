@@ -1,0 +1,1392 @@
+{
+  "contract_version": "phase711-integrated-spot-intelligence-1",
+  "phase": "7.11",
+  "spot": {
+    "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+    "label": "DEMONSTRATION / RESEARCH TEST SPOT",
+    "geometry_type": "POINT",
+    "latitude": -23.5,
+    "longitude": 152.0,
+    "crs": "UNKNOWN",
+    "spatial_precision": "UNKNOWN",
+    "coordinates_unchanged": true,
+    "source": "NOAA orig24_names.txt heritage coordinate. Not a resort survey."
+  },
+  "spatial_context": {
+    "spot_crs": "UNKNOWN",
+    "note": "Source geometries keep their own CRS status. UNKNOWN CRS blocks production comparison."
+  },
+  "temporal_context": {
+    "spot_reference_time": "UNKNOWN",
+    "policy": "NOT_DEFINED",
+    "note": "retrieved_at is never used as observed_at."
+  },
+  "sources": {
+    "NOAA_CORAL_REEF_WATCH": {
+      "role": "THERMAL",
+      "integration": "PARTIAL",
+      "epistemic": "EXTERNAL_INDICATOR",
+      "availability": "DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY",
+      "summary": "Six CRW products on one retrieved cell. Production spatial association UNKNOWN (CRS unknown)."
+    },
+    "ALLEN_CORAL_ATLAS": {
+      "role": "HABITAT_SPATIAL_CONTEXT",
+      "integration": "PARTIAL",
+      "epistemic": "CONTEXT_ONLY",
+      "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+      "summary": "Allen WFS extracts exist, but the DEMO Spot is outside the stored bbox. Classes are not attached."
+    },
+    "MERMAID": {
+      "role": "FIELD_ECOLOGICAL_OBSERVATIONS",
+      "integration": "PARTIAL",
+      "epistemic": "MEASURED_ECOLOGICAL_OBSERVATION_WHEN_COMPATIBLE",
+      "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+      "summary": "MERMAID FIELD OBSERVATION: NOT AVAILABLE FOR THIS SPOT. Australia summary records exist elsewhere. Absence is not 'no bleaching' or 'healthy'."
+    }
+  },
+  "thermal_evidence": {
+    "source": "NOAA_CORAL_REEF_WATCH",
+    "epistemic": "EXTERNAL_INDICATOR",
+    "availability": "DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY",
+    "summary": "Six CRW products on one retrieved cell. Production spatial association UNKNOWN (CRS unknown).",
+    "product_status": {
+      "SST": "available",
+      "SST anomaly": "available",
+      "HotSpot": "available",
+      "DHW": "available",
+      "Bleaching Alert Area": "available"
+    },
+    "indicators": [
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstDaily",
+        "what": "crw_coraltemp_sst",
+        "value": "22.72",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstanomalyDaily",
+        "what": "crw_sst_anomaly_v31",
+        "value": "0.78",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstanomalybaselineDaily",
+        "what": "crw_sst_anomaly_1991_2020",
+        "value": "0.4",
+        "unit": "degree_Celsius",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwhotspotDaily",
+        "what": "crw_hotspot",
+        "value": "-4.39",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwdhwDaily",
+        "what": "crw_dhw",
+        "value": "0.0",
+        "unit": "degree_Celsius_weeks",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwbaa7dDaily",
+        "what": "crw_bleaching_alert_area_7d",
+        "value": "0",
+        "unit": "stress_level",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      }
+    ],
+    "thermal_risk_score": null,
+    "local_temperature": false,
+    "nearest_selected": false,
+    "interpolated": false,
+    "averaged": false
+  },
+  "ecological_habitat_context": {
+    "source": "ALLEN_CORAL_ATLAS",
+    "epistemic": "CONTEXT_ONLY",
+    "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+    "coverage": "NOT_AVAILABLE",
+    "benthic_status": "partial (extract exists elsewhere; not attached to this Spot)",
+    "geomorphic_status": "partial (extract exists elsewhere; not attached to this Spot)",
+    "summary": "Allen WFS extracts exist, but the DEMO Spot is outside the stored bbox. Classes are not attached.",
+    "context_items": [
+      {
+        "source": "ALLEN_CORAL_ATLAS",
+        "product": "benthic_data_verbose",
+        "layer": "benthic",
+        "version": "UNKNOWN",
+        "epoch": "UNKNOWN",
+        "epistemic_type": "CONTEXT_ONLY",
+        "spatial_relationship": {
+          "association_type": "UNKNOWN",
+          "comparison_performed": false,
+          "overlap_fraction": "UNKNOWN",
+          "reason": "The stored Allen WFS bbox does not contain this DEMO Spot. Coordinates were not changed. Feature geometry is null, so no polygon overlay exists."
+        },
+        "temporal_semantics": {
+          "association_type": "UNKNOWN",
+          "temporal_semantics": "MAP_EPOCH",
+          "map_epoch": "UNKNOWN",
+          "observation_time": "UNKNOWN",
+          "map_epoch_is_observation_time": false
+        },
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN"
+        },
+        "uncertainty": {
+          "measurement": "UNKNOWN",
+          "spatial": "UNKNOWN",
+          "temporal": "UNKNOWN",
+          "association": "UNKNOWN",
+          "model": "UNKNOWN"
+        },
+        "provenance": {
+          "raw_file": "benthic_bbox.json",
+          "raw_checksum_sha256": "9c8e75badd8ef73073f3fe0130360fb5878e2674a65d3bee87dabbca7f6beda9"
+        },
+        "field_observation": false,
+        "applies_to_this_spot": false
+      },
+      {
+        "source": "ALLEN_CORAL_ATLAS",
+        "product": "geomorphic_data_verbose",
+        "layer": "geomorphic",
+        "version": "UNKNOWN",
+        "epoch": "UNKNOWN",
+        "epistemic_type": "CONTEXT_ONLY",
+        "spatial_relationship": {
+          "association_type": "UNKNOWN",
+          "comparison_performed": false,
+          "overlap_fraction": "UNKNOWN",
+          "reason": "The stored Allen WFS bbox does not contain this DEMO Spot. Coordinates were not changed. Feature geometry is null, so no polygon overlay exists."
+        },
+        "temporal_semantics": {
+          "association_type": "UNKNOWN",
+          "temporal_semantics": "MAP_EPOCH",
+          "map_epoch": "UNKNOWN",
+          "observation_time": "UNKNOWN",
+          "map_epoch_is_observation_time": false
+        },
+        "quality": {
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "association_quality": "UNKNOWN"
+        },
+        "uncertainty": {
+          "measurement": "UNKNOWN",
+          "spatial": "UNKNOWN",
+          "temporal": "UNKNOWN",
+          "association": "UNKNOWN",
+          "model": "UNKNOWN"
+        },
+        "provenance": {
+          "raw_file": "geomorphic_bbox.json",
+          "raw_checksum_sha256": "f06c0b7ad90c10942c0d1c3fab3148db075421f0eed1b82f2c0ade32ae2e5a58"
+        },
+        "field_observation": false,
+        "applies_to_this_spot": false
+      }
+    ],
+    "class_attached_to_spot": false,
+    "field_observation": false
+  },
+  "field_ecological_observations": {
+    "source": "MERMAID",
+    "epistemic": "MEASURED_ECOLOGICAL_OBSERVATION_WHEN_COMPATIBLE",
+    "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+    "status_label": "DATA EXISTS BUT NO COMPATIBLE MATCH",
+    "compatible_count": 0,
+    "compatible_observations": [],
+    "summary": "MERMAID FIELD OBSERVATION: NOT AVAILABLE FOR THIS SPOT. Australia summary records exist elsewhere. Absence is not 'no bleaching' or 'healthy'.",
+    "mermaid_access": "PARTIAL",
+    "mermaid_spatial_compatibility": "UNKNOWN",
+    "mermaid_temporal_compatibility": "UNKNOWN",
+    "mermaid_thermal_ground_truth": "NOT_AVAILABLE",
+    "ground_truth_availability": "UNVERIFIED",
+    "access_blocked_note": "sites endpoint HTTP 401. Observation-level rows were not read.",
+    "australia_summary_count": 45,
+    "bleaching_semantics": {
+      "categories_preserved": true,
+      "recently_dead_is_mortality_percent": false,
+      "bleaching_is_temperature": false,
+      "bleaching_is_thermal_ground_truth": false
+    }
+  },
+  "indicators": {
+    "external": [
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstDaily",
+        "what": "crw_coraltemp_sst",
+        "value": "22.72",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstanomalyDaily",
+        "what": "crw_sst_anomaly_v31",
+        "value": "0.78",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwsstanomalybaselineDaily",
+        "what": "crw_sst_anomaly_1991_2020",
+        "value": "0.4",
+        "unit": "degree_Celsius",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwhotspotDaily",
+        "what": "crw_hotspot",
+        "value": "-4.39",
+        "unit": "degree_C",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwdhwDaily",
+        "what": "crw_dhw",
+        "value": "0.0",
+        "unit": "degree_Celsius_weeks",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      },
+      {
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "dataset_id": "noaacrwbaa7dDaily",
+        "what": "crw_bleaching_alert_area_7d",
+        "value": "0",
+        "unit": "stress_level",
+        "epistemic": "EXTERNAL_INDICATOR",
+        "applies_to": "retrieved cell only",
+        "spatial_association": {
+          "association_type": "UNKNOWN",
+          "reason": "Spot CRS and grid CRS are both UNKNOWN. Coordinates are not compared.",
+          "comparison_performed": false
+        },
+        "temporal_association": {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        "cell": {
+          "latitude": "-23.475",
+          "longitude": "151.975"
+        },
+        "baliza_alert": "NO"
+      }
+    ],
+    "derived": [],
+    "note": "No thermal_risk_score or weighted combination is produced."
+  },
+  "associations": {
+    "spatial": {
+      "NOAA_CORAL_REEF_WATCH": {
+        "production": {
+          "pixel_count": 4,
+          "valued_cells": 1,
+          "averaged_value": null,
+          "nearest_selected": false,
+          "interpolated": false,
+          "association_type": "UNKNOWN",
+          "pixels": [
+            {
+              "latitude": -23.475,
+              "longitude": 151.975,
+              "retrieved": true,
+              "values": "see external_indicators",
+              "scientific_layer": "EXTERNAL_INDICATOR"
+            },
+            {
+              "latitude": -23.475,
+              "longitude": 152.025,
+              "retrieved": false,
+              "values": "UNKNOWN",
+              "scientific_layer": "EXTERNAL_INDICATOR"
+            },
+            {
+              "latitude": -23.525,
+              "longitude": 151.975,
+              "retrieved": false,
+              "values": "UNKNOWN",
+              "scientific_layer": "EXTERNAL_INDICATOR"
+            },
+            {
+              "latitude": -23.525,
+              "longitude": 152.025,
+              "retrieved": false,
+              "values": "UNKNOWN",
+              "scientific_layer": "EXTERNAL_INDICATOR"
+            }
+          ],
+          "note": "Four documented centers. One retrieved. CRS unknown, so intersection is not confirmed."
+        },
+        "test_four_pixel_boundary": {
+          "label": "Cell values stay external. No local measurement is inferred.",
+          "association_type": "INTERSECTS",
+          "hit_count": 4,
+          "local_estimate": "NOT_AUTHORIZED",
+          "averaged_value": null,
+          "values": [
+            "retrieved",
+            null,
+            null,
+            null
+          ]
+        }
+      },
+      "ALLEN_CORAL_ATLAS": {
+        "association_type": "UNKNOWN",
+        "comparison_performed": false,
+        "overlap_fraction": "UNKNOWN",
+        "reason": "The stored Allen WFS bbox does not contain this DEMO Spot. Coordinates were not changed. Feature geometry is null, so no polygon overlay exists."
+      },
+      "MERMAID": {
+        "association_type": "UNKNOWN",
+        "comparison_performed": false,
+        "distance_m": "UNKNOWN",
+        "near_promoted_to_measured": false,
+        "reason": "No identical coordinate. CRS is unknown. The Australia filter is not a proximity search. NEAR was not assigned."
+      }
+    },
+    "temporal": {
+      "NOAA_CORAL_REEF_WATCH": [
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        },
+        {
+          "association_type": "UNKNOWN",
+          "source_time": "2026-09-26T12:00:00Z",
+          "spot_reference_time": "UNKNOWN",
+          "policy": "NOT_DEFINED",
+          "ingestion_time": "2026-10-01",
+          "observation_time": "UNKNOWN",
+          "note": "Grid time is not relabeled as an observation time."
+        }
+      ],
+      "ALLEN_CORAL_ATLAS": {
+        "association_type": "UNKNOWN",
+        "temporal_semantics": "MAP_EPOCH",
+        "map_epoch": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "map_epoch_is_observation_time": false
+      },
+      "MERMAID": {
+        "association_type": "UNKNOWN",
+        "spot_reference_time": "UNKNOWN",
+        "policy": "NOT_DEFINED",
+        "reason": "The Spot has no reference time, and no matched survey date was selected."
+      }
+    }
+  },
+  "evidence": {
+    "items": [
+      {
+        "evidence_id": "crw-noaacrwsstDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwsstDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9",
+        "product_version": "CoralTemp-v3.1",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "crw-noaacrwsstanomalyDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwsstanomalyDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+        "product_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "crw-noaacrwsstanomalybaselineDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+        "product_version": "1991-2020 climatological baseline",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "crw-noaacrwhotspotDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwhotspotDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3",
+        "product_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "crw-noaacrwdhwDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwdhwDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86",
+        "product_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "crw-noaacrwbaa7dDaily",
+        "scientific_layer": "EXTERNAL_INDICATOR",
+        "epistemic_label": "FACT",
+        "raw_file": "noaacrwbaa7dDaily_2026-09-26.csv",
+        "raw_checksum_sha256": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4",
+        "product_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+        "transformation_chain": [
+          "RAW",
+          "PARSE",
+          "NORMALIZE"
+        ],
+        "baliza_alert": "NO",
+        "source": "NOAA_CORAL_REEF_WATCH",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "production spatial association confirmation",
+          "observation_time"
+        ]
+      },
+      {
+        "evidence_id": "allen-context-benthic",
+        "source": "ALLEN_CORAL_ATLAS",
+        "scientific_layer": "CONTEXT_ONLY",
+        "epistemic_label": "FACT",
+        "raw_file": "benthic_bbox.json",
+        "raw_checksum_sha256": "9c8e75badd8ef73073f3fe0130360fb5878e2674a65d3bee87dabbca7f6beda9",
+        "applies_to_this_spot": false,
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "spot attachment",
+          "feature geometry",
+          "map_epoch"
+        ],
+        "field_observation": false
+      },
+      {
+        "evidence_id": "allen-context-geomorphic",
+        "source": "ALLEN_CORAL_ATLAS",
+        "scientific_layer": "CONTEXT_ONLY",
+        "epistemic_label": "FACT",
+        "raw_file": "geomorphic_bbox.json",
+        "raw_checksum_sha256": "f06c0b7ad90c10942c0d1c3fab3148db075421f0eed1b82f2c0ade32ae2e5a58",
+        "applies_to_this_spot": false,
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "spot attachment",
+          "feature geometry",
+          "map_epoch"
+        ],
+        "field_observation": false
+      },
+      {
+        "evidence_id": "mermaid-demo-no-match",
+        "source": "MERMAID",
+        "scientific_layer": "NOT_AVAILABLE",
+        "epistemic_label": "FACT",
+        "narrative": "No compatible MERMAID field observation for this Spot.",
+        "evidence_completeness": "PARTIAL",
+        "missing": [
+          "compatible record",
+          "spatial association",
+          "temporal association",
+          "raw body (privacy)"
+        ],
+        "inquiry_provenance": {
+          "source": "MERMAID",
+          "artifact": "mermaid-inquiry.json",
+          "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+          "queries": [
+            {
+              "name": "summary_sample_events_page",
+              "url": "https://api.datamermaid.org/v1/summarysampleevents/?limit=1",
+              "http_status": 200,
+              "http_date": "Thu, 01 Oct 2026 15:06:22 GMT",
+              "response_sha256": "4056fcef2a815b8cecd204351fc4a7331cdf3f094ec723b3df523a40172cb6f2",
+              "count": 16557,
+              "raw_body_stored": false
+            },
+            {
+              "name": "summary_sites",
+              "url": "https://api.datamermaid.org/v1/summarysites/?limit=1",
+              "http_status": 404,
+              "http_date": "Thu, 01 Oct 2026 15:06:23 GMT",
+              "response_sha256": "5547992afdadb59737c5c0feb1a35dff294cd27145bf290c031737ecf8a2577d",
+              "count": null,
+              "raw_body_stored": false
+            },
+            {
+              "name": "projects",
+              "url": "https://api.datamermaid.org/v1/projects/?limit=1",
+              "http_status": 200,
+              "http_date": "Thu, 01 Oct 2026 15:06:24 GMT",
+              "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+              "count": 0,
+              "raw_body_stored": false
+            },
+            {
+              "name": "sites",
+              "url": "https://api.datamermaid.org/v1/sites/?limit=1",
+              "http_status": 401,
+              "http_date": "Thu, 01 Oct 2026 15:06:24 GMT",
+              "response_sha256": "683e81163103ba1f17e080266435f98c52addb044bbf2592efbb7d143c18672d",
+              "count": null,
+              "raw_body_stored": false
+            },
+            {
+              "name": "site_name_heron",
+              "url": "https://api.datamermaid.org/v1/summarysampleevents/?site_name=Heron&limit=5",
+              "http_status": 200,
+              "http_date": "Thu, 01 Oct 2026 15:06:25 GMT",
+              "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+              "count": 0,
+              "raw_body_stored": false
+            },
+            {
+              "name": "site_name_heron_island",
+              "url": "https://api.datamermaid.org/v1/summarysampleevents/?site_name=Heron+Island&limit=20",
+              "http_status": 200,
+              "http_date": "Thu, 01 Oct 2026 15:06:26 GMT",
+              "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+              "count": 0,
+              "raw_body_stored": false
+            },
+            {
+              "name": "australia",
+              "url": "https://api.datamermaid.org/v1/summarysampleevents/?country_name=Australia&limit=1",
+              "http_status": 200,
+              "http_date": "Thu, 01 Oct 2026 15:06:27 GMT",
+              "response_sha256": "18f580a46aaedb02169930dab3fd7a92ca94769480eeaf9033d679ab4d28d964",
+              "count": 45,
+              "raw_body_stored": false
+            },
+            {
+              "name": "australia_on_grid_day",
+              "url": "https://api.datamermaid.org/v1/summarysampleevents/?country_name=Australia&date_min=2026-09-26&date_max=2026-09-26&limit=100",
+              "http_status": 502,
+              "http_date": "Thu, 01 Oct 2026 15:06:34 GMT",
+              "response_sha256": "880c929020d4b79bf1995656d21d9a6859aab3a9460f941eb0b1a6e5502ee4cc",
+              "count": null,
+              "raw_body_stored": false
+            }
+          ],
+          "mermaid_status": "ACCESS_GAP",
+          "spatial_search_completed": false,
+          "any_coordinate_equals_spot": false
+        },
+        "australia_response_sha256": "342a5f63abd691e9087894008d5c8071a9dab8982732eefa8a9169beccfd5631"
+      }
+    ],
+    "evidence_completeness": "PARTIAL",
+    "traceable": true,
+    "note": "Each item keeps source raw checksum / path when available. Gaps are explicit."
+  },
+  "quality": {
+    "by_source": {
+      "NOAA_CORAL_REEF_WATCH": "PARTIAL",
+      "ALLEN_CORAL_ATLAS": "PARTIAL",
+      "MERMAID": "PARTIAL"
+    },
+    "overall_quality_score": null,
+    "note": "Quality stays source-specific. No aggregate quality formula is authorized."
+  },
+  "freshness": {
+    "by_source": {
+      "NOAA_CORAL_REEF_WATCH": {
+        "product_time": "2026-09-26T12:00:00Z",
+        "retrieval_time": "2026-10-01",
+        "reference_time": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "note": "No freshness cutoff is authorized in this phase."
+      },
+      "ALLEN_CORAL_ATLAS": {
+        "retrieval_freshness": "2026-10-01T07:46:05.256Z",
+        "scientific_temporal_currency": "UNKNOWN",
+        "note": "A recent retrieval does not make a map epoch current."
+      },
+      "MERMAID": {
+        "retrieval_freshness": "Thu, 01 Oct 2026 15:07:40 GMT",
+        "observation_recency": "UNKNOWN",
+        "note": "A recent retrieval does not make an old survey current."
+      }
+    },
+    "note": "Retrieval freshness is not observation recency or scientific temporal currency."
+  },
+  "uncertainty": {
+    "measurement_uncertainty": "UNKNOWN",
+    "spatial_uncertainty": "PARTIAL",
+    "temporal_uncertainty": "PARTIAL",
+    "association_uncertainty": "PARTIAL",
+    "methodological_uncertainty": "PARTIAL",
+    "model_uncertainty": "NOT_APPLICABLE",
+    "aggregate_uncertainty_score": null,
+    "by_source": {
+      "NOAA_CORAL_REEF_WATCH": {
+        "measurement": "UNKNOWN",
+        "spatial": "UNKNOWN",
+        "temporal": "UNKNOWN",
+        "association": "UNKNOWN",
+        "model": "NOT_APPLICABLE"
+      },
+      "ALLEN_CORAL_ATLAS": {
+        "measurement": "UNKNOWN",
+        "spatial": "UNKNOWN",
+        "temporal": "UNKNOWN",
+        "association": "UNKNOWN",
+        "model": "UNKNOWN"
+      },
+      "MERMAID": {
+        "measurement": "UNKNOWN",
+        "spatial": "UNKNOWN",
+        "temporal": "UNKNOWN",
+        "association": "UNKNOWN",
+        "methodological": "UNKNOWN"
+      }
+    },
+    "note": "Dimensions stay separate. UNKNOWN is not zero."
+  },
+  "data_gaps": [
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY",
+      "kind": "SPATIAL_GAP",
+      "detail": "CRW products exist on one retrieved cell; production association stays UNKNOWN (CRS unknown).",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+      "kind": "SPATIAL_GAP",
+      "detail": "Allen extracts exist; DEMO Spot has no attached class (bbox / null geometry).",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "DATA_EXISTS_NO_COMPATIBLE_MATCH",
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "MERMAID data exists (Australia summaries) but no compatible field observation for this Spot. Not equivalent to NO_DATA, NO_BLEACHING, or HEALTHY.",
+      "implies_no_risk": false,
+      "implies_no_bleaching": false,
+      "implies_healthy": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "DATA_EXISTS_BUT_ACCESS_BLOCKED",
+      "kind": "LICENSE_ACCESS_GAP",
+      "detail": "Observation-level / sites access remains blocked (HTTP 401 on sites).",
+      "implies_no_risk": false
+    },
+    {
+      "source": "INTEGRATED",
+      "availability": "NO_DATA",
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "THERMAL_GROUND_TRUTH = NOT_AVAILABLE. No local temperature measurement.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "DATA_GAP",
+      "detail": "Three of four documented NOAA cell centers were not retrieved.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "crw_7day_sst_trend",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "crw_bleaching_alert_area_daily",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "crw_mmm_climatology",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "TEMPORAL_GAP",
+      "detail": "Spot has no reference time. Temporal association stays UNKNOWN.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SPATIAL_GAP",
+      "detail": "Grid CRS is UNKNOWN. Production association stays UNKNOWN.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "No in-situ measurement at this spot.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "NOAA_CORAL_REEF_WATCH",
+      "availability": "SOURCE_REPORTED",
+      "kind": "PROVENANCE_GAP",
+      "detail": "Retrieval timestamp is a calendar date without a sub-second clock.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SPATIAL_GAP",
+      "detail": "ALLEN_SPATIAL_COVERAGE = NOT_AVAILABLE for the DEMO Spot. Coordinates were not moved.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "reef_mask",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "satellite_derived_depth",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SOURCE_GAP",
+      "detail": "turbidity",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SPATIAL_GAP",
+      "detail": "Feature geometry is null in the stored extracts. Polygon\u2192Spot overlay is not available.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "PROVENANCE_GAP",
+      "detail": "product_version and map_epoch are UNKNOWN on the stored features.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "ALLEN_CORAL_ATLAS",
+      "availability": "SOURCE_REPORTED",
+      "kind": "QUALITY_GAP",
+      "detail": "No source quality or classification confidence is in the attribute extract.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "SPATIAL_GAP",
+      "detail": "No MERMAID coordinate equals the DEMO Spot. Spatial compatibility stays UNKNOWN.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "TEMPORAL_GAP",
+      "detail": "No temporally associated MERMAID row was selected for the DEMO Spot.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "LICENSE_ACCESS_GAP",
+      "detail": "sites endpoint HTTP 401. Observation-level rows were not read.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "No compatible field observation for this Spot. Absence is not 'healthy' or 'no bleaching'.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "PROVENANCE_GAP",
+      "detail": "Summary response bodies were not stored; only SHA-256 and redacted fields remain.",
+      "implies_no_risk": false
+    },
+    {
+      "source": "MERMAID",
+      "availability": "SOURCE_REPORTED",
+      "kind": "DATA_GAP",
+      "detail": "Heron Island name query count 0.",
+      "implies_no_risk": false
+    }
+  ],
+  "source_conflicts": [
+    {
+      "sources": [
+        "NOAA_CORAL_REEF_WATCH"
+      ],
+      "dimension": "SST anomaly on the retrieved cell",
+      "result": "SOURCE_DIFFERENCE",
+      "resolved": false,
+      "detail": "CRW internal anomaly comparison; resolved=False",
+      "values": [
+        "0.78",
+        "0.4"
+      ]
+    },
+    {
+      "sources": [
+        "NOAA_CORAL_REEF_WATCH",
+        "MERMAID"
+      ],
+      "dimension": "thermal_indicator_vs_field_observation",
+      "result": "NO_DIRECT_CONFLICT",
+      "resolved": false,
+      "detail": "CRW availability=DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY; MERMAID=DATA EXISTS BUT NO COMPATIBLE MATCH. Missing field observation is not disagreement with CRW, and does not validate CRW.",
+      "automatic_causality": false,
+      "automatic_validation": false
+    },
+    {
+      "sources": [
+        "ALLEN_CORAL_ATLAS",
+        "MERMAID"
+      ],
+      "dimension": "mapped_habitat_vs_field_benthic",
+      "result": "NO_DIRECT_CONFLICT",
+      "resolved": false,
+      "detail": "Allen class is not attached to the DEMO Spot and/or no compatible MERMAID field observation exists. Sources remain separate; no source-of-truth chosen."
+    }
+  ],
+  "provenance": {
+    "sources": [
+      "NOAA_CORAL_REEF_WATCH",
+      "ALLEN_CORAL_ATLAS",
+      "MERMAID"
+    ],
+    "per_source_builders": {
+      "NOAA_CORAL_REEF_WATCH": "build_crw_spot_intelligence",
+      "ALLEN_CORAL_ATLAS": "build_allen_spot_intelligence",
+      "MERMAID": "build_mermaid_spot_intelligence"
+    },
+    "paths": {
+      "crw_raw": "data\\phase75\\raw",
+      "crw_provenance": "data\\phase75\\provenance.json",
+      "allen_raw": "data\\phase75\\allen\\raw",
+      "allen_provenance": "data\\phase75\\allen\\provenance.json",
+      "mermaid_inquiry": "data\\phase763\\mermaid-inquiry.json",
+      "mermaid_australia": "data\\phase763\\mermaid-australia-summary.json"
+    },
+    "note": "Each evidence item retains raw file / checksum / transformation chain from its source builder."
+  },
+  "scientific_acceptance": {
+    "THERMAL": "CRW evidence available",
+    "HABITAT": "Allen context partially available",
+    "FIELD_ECOLOGY": "MERMAID data exists BUT NO COMPATIBLE MATCH",
+    "THERMAL_GROUND_TRUTH": "NOT_AVAILABLE",
+    "LOCAL_ESTIMATION": "NOT_AUTHORIZED"
+  },
+  "epistemic_rules": {
+    "measured_ecological_observation_is_measured_temperature": false,
+    "allen_is_field_observation": false,
+    "crw_is_local_temperature": false,
+    "crw_baa_is_baliza_alert": false,
+    "mermaid_absence_is_no_bleaching": false,
+    "mermaid_absence_is_healthy": false,
+    "near_promoted_to_measured": false,
+    "pixel_association_is_local_measurement": false
+  },
+  "estimated": "NONE",
+  "downscaling": "NOT_AUTHORIZED",
+  "ml_implementation": "NOT_AUTHORIZED",
+  "local_estimation": "NOT_AUTHORIZED",
+  "thermal_ground_truth": "NOT_AVAILABLE",
+  "alerts": [],
+  "decisions": [],
+  "actions": [],
+  "outcomes": [],
+  "baliza_alert_separation": {
+    "integrated_spot_intelligence_creates_baliza_alert": false,
+    "crw": {
+      "crw_bleaching_alert_area_is_baliza_alert": false,
+      "note": "CRW Bleaching Alert Area remains EXTERNAL_INDICATOR. Only an existing BALIZA RuleVersion may create a BALIZA alert."
+    },
+    "allen": {
+      "allen_is_baliza_alert": false,
+      "note": "Allen provides mapped context. It does not create a BALIZA alert."
+    },
+    "mermaid": {
+      "mermaid_is_baliza_alert": false,
+      "note": "MERMAID provides field evidence. It does not create a BALIZA alert."
+    }
+  },
+  "dss_compatibility": {
+    "can_feed_dss_package": true,
+    "creates_recommendation": false,
+    "creates_decision": false,
+    "creates_action": false,
+    "creates_outcome": false,
+    "attachable": {
+      "evidence_refs": [
+        "crw-noaacrwsstDaily",
+        "crw-noaacrwsstanomalyDaily",
+        "crw-noaacrwsstanomalybaselineDaily",
+        "crw-noaacrwhotspotDaily",
+        "crw-noaacrwdhwDaily",
+        "crw-noaacrwbaa7dDaily",
+        "allen-context-benthic",
+        "allen-context-geomorphic",
+        "mermaid-demo-no-match"
+      ],
+      "gaps": [
+        {
+          "kind": "SPATIAL_GAP",
+          "reason": "CRW products exist on one retrieved cell; production association stays UNKNOWN (CRS unknown).",
+          "source_type": "NOAA_CORAL_REEF_WATCH",
+          "source_id": "DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY"
+        },
+        {
+          "kind": "SPATIAL_GAP",
+          "reason": "Allen extracts exist; DEMO Spot has no attached class (bbox / null geometry).",
+          "source_type": "ALLEN_CORAL_ATLAS",
+          "source_id": "DATA_EXISTS_NO_COMPATIBLE_MATCH"
+        },
+        {
+          "kind": "GROUND_TRUTH_GAP",
+          "reason": "MERMAID data exists (Australia summaries) but no compatible field observation for this Spot. Not equivalent to NO_DATA, NO_BLEACHING, or HEALTHY.",
+          "source_type": "MERMAID",
+          "source_id": "DATA_EXISTS_NO_COMPATIBLE_MATCH"
+        },
+        {
+          "kind": "LICENSE_ACCESS_GAP",
+          "reason": "Observation-level / sites access remains blocked (HTTP 401 on sites).",
+          "source_type": "MERMAID",
+          "source_id": "DATA_EXISTS_BUT_ACCESS_BLOCKED"
+        },
+        {
+          "kind": "GROUND_TRUTH_GAP",
+          "reason": "THERMAL_GROUND_TRUTH = NOT_AVAILABLE. No local temperature measurement.",
+          "source_type": "INTEGRATED",
+          "source_id": "NO_DATA"
+        }
+      ],
+      "uncertainty_notes": [
+        "measurement_uncertainty=UNKNOWN",
+        "spatial_uncertainty=PARTIAL",
+        "temporal_uncertainty=PARTIAL",
+        "association_uncertainty=PARTIAL",
+        "methodological_uncertainty=PARTIAL",
+        "model_uncertainty=NOT_APPLICABLE"
+      ],
+      "conflicts_unresolved": [
+        {
+          "sources": [
+            "NOAA_CORAL_REEF_WATCH"
+          ],
+          "dimension": "SST anomaly on the retrieved cell",
+          "result": "SOURCE_DIFFERENCE",
+          "resolved": false,
+          "detail": "CRW internal anomaly comparison; resolved=False",
+          "values": [
+            "0.78",
+            "0.4"
+          ]
+        },
+        {
+          "sources": [
+            "NOAA_CORAL_REEF_WATCH",
+            "MERMAID"
+          ],
+          "dimension": "thermal_indicator_vs_field_observation",
+          "result": "NO_DIRECT_CONFLICT",
+          "resolved": false,
+          "detail": "CRW availability=DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY; MERMAID=DATA EXISTS BUT NO COMPATIBLE MATCH. Missing field observation is not disagreement with CRW, and does not validate CRW.",
+          "automatic_causality": false,
+          "automatic_validation": false
+        },
+        {
+          "sources": [
+            "ALLEN_CORAL_ATLAS",
+            "MERMAID"
+          ],
+          "dimension": "mapped_habitat_vs_field_benthic",
+          "result": "NO_DIRECT_CONFLICT",
+          "resolved": false,
+          "detail": "Allen class is not attached to the DEMO Spot and/or no compatible MERMAID field observation exists. Sources remain separate; no source-of-truth chosen."
+        }
+      ]
+    },
+    "note": "DSS may present this classified evidence. It must not auto-convert indicators into decisions."
+  },
+  "alert_compatibility": {
+    "can_be_referenced_by_alert": true,
+    "creates_alert": false,
+    "rule_version_changed": false,
+    "thresholds_changed": false,
+    "severity_policy_changed": false,
+    "referenceable_evidence_ids": [
+      "crw-noaacrwsstDaily",
+      "crw-noaacrwsstanomalyDaily",
+      "crw-noaacrwsstanomalybaselineDaily",
+      "crw-noaacrwhotspotDaily",
+      "crw-noaacrwdhwDaily",
+      "crw-noaacrwbaa7dDaily",
+      "allen-context-benthic",
+      "allen-context-geomorphic",
+      "mermaid-demo-no-match"
+    ],
+    "note": "Integration does not generate BALIZA alerts. Future alerts may cite these evidence ids."
+  },
+  "human_readable": "SPOT INTELLIGENCE\n\nSPOT\nDEMO-CRW-ORIG24-HERITAGE-POINT\nLatitude: -23.5\nLongitude: 152.0\nCRS: UNKNOWN\n\nTHERMAL\nNOAA CRW\n- SST: available\n- SST anomaly: available\n- HotSpot: available\n- DHW: available\n- Bleaching Alert Area: available\n\nClassification:\nEXTERNAL INDICATOR\n\nHABITAT / SPATIAL CONTEXT\nAllen Coral Atlas\n- benthic classification: partial (extract exists elsewhere; not attached to this Spot)\n- geomorphic context: partial (extract exists elsewhere; not attached to this Spot)\n- coverage for this Spot: NOT_AVAILABLE\n\nClassification:\nCONTEXT ONLY\n\nFIELD ECOLOGICAL OBSERVATIONS\nMERMAID\n- compatible field observations: 0\n- status: DATA EXISTS BUT NO COMPATIBLE MATCH\n\nIMPORTANT:\nAbsence of a compatible MERMAID observation\ndoes not imply absence of bleaching.\n\nTHERMAL GROUND TRUTH\nNOT_AVAILABLE\n\nLOCAL ESTIMATION\nNOT_AUTHORIZED\n\nUNCERTAINTY\n- measurement: UNKNOWN\n- spatial: PARTIAL\n- temporal: PARTIAL\n- association: PARTIAL\n- methodological: PARTIAL\n- model: NOT_APPLICABLE\n\nDATA GAPS\n- [DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY] NOAA_CORAL_REEF_WATCH: CRW products exist on one retrieved cell; production association stays UNKNOWN (CRS unknown).\n- [DATA_EXISTS_NO_COMPATIBLE_MATCH] ALLEN_CORAL_ATLAS: Allen extracts exist; DEMO Spot has no attached class (bbox / null geometry).\n- [DATA_EXISTS_NO_COMPATIBLE_MATCH] MERMAID: MERMAID data exists (Australia summaries) but no compatible field observation for this Spot. Not equivalent to NO_DATA, NO_BLEACHING, or HEALTHY.\n- [DATA_EXISTS_BUT_ACCESS_BLOCKED] MERMAID: Observation-level / sites access remains blocked (HTTP 401 on sites).\n- [NO_DATA] INTEGRATED: THERMAL_GROUND_TRUTH = NOT_AVAILABLE. No local temperature measurement.\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Three of four documented NOAA cell centers were not retrieved.\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_7day_sst_trend\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_bleaching_alert_area_daily\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: crw_mmm_climatology\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Spot has no reference time. Temporal association stays UNKNOWN.\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Grid CRS is UNKNOWN. Production association stays UNKNOWN.\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: No in-situ measurement at this spot.\n- [SOURCE_REPORTED] NOAA_CORAL_REEF_WATCH: Retrieval timestamp is a calendar date without a sub-second clock.\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: ALLEN_SPATIAL_COVERAGE = NOT_AVAILABLE for the DEMO Spot. Coordinates were not moved.\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: reef_mask\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: satellite_derived_depth\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: turbidity\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: Feature geometry is null in the stored extracts. Polygon\u2192Spot overlay is not available.\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: product_version and map_epoch are UNKNOWN on the stored features.\n- [SOURCE_REPORTED] ALLEN_CORAL_ATLAS: No source quality or classification confidence is in the attribute extract.\n- [SOURCE_REPORTED] MERMAID: No MERMAID coordinate equals the DEMO Spot. Spatial compatibility stays UNKNOWN.\n- [SOURCE_REPORTED] MERMAID: No temporally associated MERMAID row was selected for the DEMO Spot.\n- [SOURCE_REPORTED] MERMAID: sites endpoint HTTP 401. Observation-level rows were not read.\n- [SOURCE_REPORTED] MERMAID: No compatible field observation for this Spot. Absence is not 'healthy' or 'no bleaching'.\n- [SOURCE_REPORTED] MERMAID: Summary response bodies were not stored; only SHA-256 and redacted fields remain.\n- [SOURCE_REPORTED] MERMAID: Heron Island name query count 0.\n\nSOURCE CONFLICTS\n- SOURCE_DIFFERENCE: CRW internal anomaly comparison; resolved=False\n- NO_DIRECT_CONFLICT: CRW availability=DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY; MERMAID=DATA EXISTS BUT NO COMPATIBLE MATCH. Missing field observation is not disagreement with CRW, and does not validate CRW.\n- NO_DIRECT_CONFLICT: Allen class is not attached to the DEMO Spot and/or no compatible MERMAID field observation exists. Sources remain separate; no source-of-truth chosen.\n\nESTIMATED: NONE\nDOWNSCALING: NOT_AUTHORIZED\nML_IMPLEMENTATION: NOT_AUTHORIZED\nNo thermal_risk_score.\nNo Decision. No Action. No BALIZA alert from this integration.",
+  "source_package_keys": [
+    "crw",
+    "allen",
+    "mermaid"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "phase": "7.12",
+  "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+  "threshold_status": "DEMO / NON-SCIENTIFIC",
+  "demo_only": true,
+  "scientifically_validated": false,
+  "rule": {
+    "name": "demo_crw_external_sst_watch",
+    "version": "0.0.1-demo",
+    "threshold_name": "demo_sst_watch",
+    "threshold_value": 20.0,
+    "operator": "gt",
+    "outcome": "triggered",
+    "reason": "22.72 gt 20.0"
+  },
+  "alert_id": "a3424fc6-5bf7-4897-b432-86da13dad95f",
+  "dss_package_id": "c72802f4-b89a-49c0-9f24-ef089d76e95a",
+  "snapshot_id": "ee67d4ed-ba27-432e-965e-fab48c19a171",
+  "snapshot_hash": "69df6443a7ad33105e19a2748fbda0de0040ec7dd9601e08476368b788c170bf",
+  "decision_id": "cb5a4f9f-9d7f-43c9-9ed4-42252e0ac0e1",
+  "action_id": "2f5a7602-341b-41c3-87c3-be02932eea5c",
+  "outcome_id": "bdd56dc9-99b8-47ec-ac4a-1393d15c2832",
+  "thermal_ground_truth": "NOT_AVAILABLE",
+  "local_estimation": "NOT_AUTHORIZED",
+  "downscaling": "NOT_AUTHORIZED",
+  "ml_implementation": "NOT_AUTHORIZED",
+  "imr_dependency": "NONE",
+  "autonomous_action": false,
+  "autonomous_decision": false
+}

@@ -1,0 +1,90 @@
+BALIZA DSS BRIEF — PHASE 7.12
+THRESHOLD STATUS: DEMO / NON-SCIENTIFIC
+SCIENTIFICALLY_VALIDATED: false
+
+SPOT
+DEMO-CRW-ORIG24-HERITAGE-POINT
+Latitude: -23.5
+Longitude: 152.0
+CRS: UNKNOWN
+
+TIME
+Grid / source time: 2026-09-26T12:00:00+00:00
+Evaluated at: 2026-09-30T12:00:00+00:00
+Alerted at: 2026-09-30T12:00:00+00:00
+Decided at: 2026-09-30T12:00:00+00:00
+
+CURRENT STATE
+Rule outcome: triggered
+Alert status: OPEN
+Alert severity: warning
+Alert is not a Decision.
+
+EVIDENCE [FACT]
+Source: NOAA Coral Reef Watch (EXTERNAL_INDICATOR)
+Variable: crw_coraltemp_sst
+Value: 22.72 degree_C
+Spatial ref: crw_cell:-23.475,151.975|spot:DEMO-CRW-ORIG24-HERITAGE-POINT|association:UNKNOWN
+Not LOCAL_MEASURED_TEMPERATURE.
+
+Allen: CONTEXT_ONLY — not attached to DEMO Spot
+MERMAID: DATA EXISTS BUT NO COMPATIBLE MATCH — not NO BLEACHING
+
+INDICATORS [FACT / DERIVED from EXTERNAL_INDICATOR]
+Indicator: demo_crw_coraltemp_passthrough v0.0.1-demo
+Value: 22.72 degree_C
+Formula: passthrough
+
+ALERT [FACT of rule evaluation; not a Decision]
+Alert id: a3424fc6-5bf7-4897-b432-86da13dad95f
+Why: 22.72 gt 20.0
+Rule: demo_crw_external_sst_watch / 0.0.1-demo
+Threshold: demo_sst_watch=20.0 (DEMO / NON-SCIENTIFIC)
+What it does not mean: local bleaching confirmation, thermal ground truth, or scientific BALIZA threshold.
+
+UNCERTAINTIES
+- measurement: UNKNOWN
+- spatial: PARTIAL
+- temporal: PARTIAL
+- association: PARTIAL
+
+DATA GAPS
+- MERMAID:DATA_EXISTS_NO_COMPATIBLE_MATCH:compatible field observation not available for this Spot
+- ALLEN:DATA_EXISTS_NO_COMPATIBLE_MATCH:mapped context not attached to DEMO Spot
+- CRW:DATA_EXISTS_WITH_UNKNOWN_COMPATIBILITY:production spatial association UNKNOWN
+- THERMAL_GROUND_TRUTH:NOT_AVAILABLE
+- LOCAL_ESTIMATION:NOT_AUTHORIZED
+- DOWNSCALING:NOT_AUTHORIZED
+- ML_IMPLEMENTATION:NOT_AUTHORIZED
+- THRESHOLD_STATUS:DEMO / NON-SCIENTIFIC
+- ALLEN_CORAL_ATLAS:SPATIAL_GAP:Allen extracts exist; DEMO Spot has no attached class (bbox / null geometry).
+- MERMAID:GROUND_TRUTH_GAP:MERMAID data exists (Australia summaries) but no compatible field observation for this Spot. Not equivalent to NO_DATA, NO_BLEACHING, or HEALTHY.
+- MERMAID:LICENSE_ACCESS_GAP:Observation-level / sites access remains blocked (HTTP 401 on sites).
+- INTEGRATED:GROUND_TRUTH_GAP:THERMAL_GROUND_TRUTH = NOT_AVAILABLE. No local temperature measurement.
+
+RULE / VERSION
+demo_crw_external_sst_watch @ 0.0.1-demo
+DEMO_ONLY=True
+SCIENTIFICALLY_VALIDATED=False
+
+AVAILABLE OPTIONS [RECOMMENDATION]
+- 0.0.1-demo:continue_monitoring: Continue monitoring with existing public sources [RECOMMENDATION]
+- 0.0.1-demo:increase_field_observation_frequency: Increase field observation frequency if operationally available [RECOMMENDATION]
+- 0.0.1-demo:review_local_environmental_conditions: Review local environmental conditions with available context [RECOMMENDATION]
+- 0.0.1-demo:initiate_predefined_response_protocol: Initiate a predefined response protocol only after human decision [RECOMMENDATION]
+
+HUMAN DECISION [DECISION]
+Actor: ca0b8e3e-3dd6-4e8f-af65-a0bd024441e4
+Selected option: continue_monitoring
+Justification: Human review of DEMO / NON-SCIENTIFIC CRW external SST watch for the heritage DEMO Spot. Does not claim local temperature, thermal ground truth, or scientific threshold validation.
+Snapshot: ee67d4ed-ba27-432e-965e-fab48c19a171
+Snapshot hash: 69df6443a7ad33105e19a2748fbda0de0040ec7dd9601e08476368b788c170bf
+
+BOUNDARIES
+THERMAL GROUND TRUTH = NOT_AVAILABLE
+LOCAL ESTIMATION = NOT_AUTHORIZED
+DOWNSCALING = NOT_AUTHORIZED
+ML = NOT_AUTHORIZED
+MERMAID COMPATIBLE OBSERVATION = NOT_AVAILABLE
+AUTONOMOUS ACTION = false
+AUTONOMOUS DECISION = false
