@@ -353,3 +353,15 @@ PHASE 7.12 END-TO-END SCIENTIFIC DSS INTEGRATION — ESTIMATED NONE; DOWNSCALING
 `docs/57-phase7.13-pilot-readiness-review.md` records the Pilot Readiness Review. Product/DSS is ready with scientific data limitations. Scientific pilot is a conditional go. Local prediction and ML remain not authorized. IMR is not a dependency of the current product foundation and is required for the scientific validation phase. No IMR connector, ML, or new scientific thresholds were added. Provenance, quality, freshness, and uncertainty stay PARTIAL.
 
 PHASE 7.13 PILOT READINESS REVIEW — PRODUCT GO (LIMITATIONS); SCIENTIFIC PILOT CONDITIONAL GO; ML NOT_AUTHORIZED.
+
+## PHASE 7.14 STATUS
+
+`docs/58-phase7.14-baliza-visual-mvp.md` adds a React/Vite Visual MVP over existing APIs. Spot Intelligence, alerts, DSS options, and human Decision → Action → Outcome are presented without recalculating science. DEMO thresholds stay labeled DEMO / NON-SCIENTIFIC. Data gaps and uncertainty remain visible. No ML, IMR connector, or autonomous action was added.
+
+PHASE 7.14 BALIZA VISUAL MVP — PRESENTATION ONLY; ML / LOCAL ESTIMATION NOT AUTHORIZED.
+
+## PHASE 7.15 STATUS
+
+`docs/59-phase7.15-scientific-pilot-imr-specification.md` prepares the Scientific Pilot conversation with IMR. It defines objectives, questions, minimum data package, governance, holdouts, candidate targets, success/failure criteria, and the ML gate. No IMR connector, importer, ML, or new scientific thresholds were added. Unconfirmed items remain UNKNOWN / TO CONFIRM.
+
+PHASE 7.15 SCIENTIFIC PILOT PREPARATION / IMR — SPECIFICATION COMPLETE; IMR CONNECTOR NOT_IMPLEMENTED; ML NOT_AUTHORIZED.

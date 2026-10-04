@@ -36,7 +36,7 @@ Value: 22.72 degree_C
 Formula: passthrough
 
 ALERT [FACT of rule evaluation; not a Decision]
-Alert id: a3424fc6-5bf7-4897-b432-86da13dad95f
+Alert id: ed70e715-dda8-4c0d-9fc8-a4a3118441e0
 Why: 22.72 gt 20.0
 Rule: demo_crw_external_sst_watch / 0.0.1-demo
 Threshold: demo_sst_watch=20.0 (DEMO / NON-SCIENTIFIC)
@@ -74,11 +74,11 @@ AVAILABLE OPTIONS [RECOMMENDATION]
 - 0.0.1-demo:initiate_predefined_response_protocol: Initiate a predefined response protocol only after human decision [RECOMMENDATION]
 
 HUMAN DECISION [DECISION]
-Actor: ca0b8e3e-3dd6-4e8f-af65-a0bd024441e4
+Actor: 42ffcfb3-0be0-418d-9d49-6b6710dd782e
 Selected option: continue_monitoring
 Justification: Human review of DEMO / NON-SCIENTIFIC CRW external SST watch for the heritage DEMO Spot. Does not claim local temperature, thermal ground truth, or scientific threshold validation.
-Snapshot: ee67d4ed-ba27-432e-965e-fab48c19a171
-Snapshot hash: 69df6443a7ad33105e19a2748fbda0de0040ec7dd9601e08476368b788c170bf
+Snapshot: 130a5b7f-d611-4888-a1d8-7ddace077168
+Snapshot hash: 4dec783575e6091d01a0c5f143bb03f78277081e733789938df52c09e0a39beb
 
 BOUNDARIES
 THERMAL GROUND TRUTH = NOT_AVAILABLE

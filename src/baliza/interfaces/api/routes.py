@@ -435,6 +435,9 @@ def get_decision(decision_id: str, request: Request) -> dict:
         "snapshot_id": str(ctx.decision.dss_context_snapshot_id),
         "snapshot_hash": ctx.decision.snapshot_hash,
         "justification": ctx.decision.justification,
+        "selected_option": ctx.decision.selected_option,
+        "decided_at": ctx.decision.decided_at.isoformat(),
+        "package_id": str(ctx.decision.dss_package_id),
         "snapshot_alerts": list(ctx.snapshot.payload["alert_ids"]) if ctx.snapshot else [],
     }
 
@@ -593,3 +596,110 @@ def integrated_spot_intelligence(spot_id: str) -> dict:
         )
     root = Path(__file__).resolve().parents[4]
     return build_integrated_spot_intelligence(root, spot_id=spot_id)
+
+
+@router.get("/scientific/spots")
+def list_scientific_spots() -> dict:
+    """Known Spots for the Visual MVP. Coordinates are not invented."""
+    from baliza.infrastructure.sources.crw.catalog import DEMO_SPOT
+
+    return {
+        "spots": [
+            {
+                **DEMO_SPOT,
+                "spatial_precision_note": "CRS UNKNOWN. Point is the heritage coordinate, not a reef polygon.",
+                "thermal_ground_truth": "NOT_AVAILABLE",
+                "local_estimation": "NOT_AUTHORIZED",
+            }
+        ]
+    }
+
+
+@router.post("/scientific/mvp/bootstrap")
+def mvp_bootstrap(request: Request) -> dict:
+    """Seed in-memory DEMO session through DSS (no Decision). For Visual MVP only."""
+    from pathlib import Path
+
+    from baliza.application.phase712_scientific_dss import (
+        DEMO_ONLY,
+        SCIENTIFICALLY_VALIDATED,
+        THRESHOLD_STATUS,
+        run_e2e_scientific_dss,
+    )
+
+    repos = _repos(request)
+    root = Path(__file__).resolve().parents[4]
+    result = run_e2e_scientific_dss(repos, root, through="dss")
+    session = {
+        "phase": "7.14",
+        "spot_id": result.machine_summary["spot_id"],
+        "alert_id": result.machine_summary["alert_id"],
+        "dss_package_id": result.machine_summary["dss_package_id"],
+        "actor_id": result.machine_summary["actor_id"],
+        "evaluation_id": str(result.evaluation.id),
+        "rule_name": result.machine_summary["rule"]["name"],
+        "rule_version": result.machine_summary["rule"]["version"],
+        "threshold_status": THRESHOLD_STATUS,
+        "demo_only": DEMO_ONLY,
+        "scientifically_validated": SCIENTIFICALLY_VALIDATED,
+        "through": "dss",
+        "thermal_ground_truth": "NOT_AVAILABLE",
+        "ml_implementation": "NOT_AUTHORIZED",
+        "autonomous_action": False,
+        "note": "Decision / Action / Outcome must be recorded by a human via existing APIs.",
+    }
+    request.app.state.mvp_session = session
+    return {
+        "session": session,
+        "summary": result.machine_summary,
+        "brief": result.brief,
+        "spot_intelligence_available_at": f"/scientific/spots/{session['spot_id']}/intelligence",
+    }
+
+
+@router.get("/scientific/mvp/session")
+def mvp_session(request: Request) -> dict:
+    session = getattr(request.app.state, "mvp_session", None)
+    if not session:
+        raise HTTPException(status_code=404, detail="MVP session not bootstrapped. POST /scientific/mvp/bootstrap first.")
+    return {"session": session}
+
+
+@router.get("/decisions")
+def list_decisions(request: Request) -> dict:
+    repos = _repos(request)
+    items = getattr(repos.decisions, "list_all", lambda: [])()
+    return {
+        "decisions": [
+            {
+                "id": str(item.id),
+                "actor_id": str(item.actor_id),
+                "package_id": str(item.dss_package_id),
+                "snapshot_id": str(item.dss_context_snapshot_id),
+                "selected_option": item.selected_option,
+                "justification": item.justification,
+                "decided_at": item.decided_at.isoformat(),
+                "snapshot_hash": item.snapshot_hash,
+                "is_human_decision": True,
+            }
+            for item in items
+        ]
+    }
+
+
+@router.get("/dss/packages")
+def list_dss_packages(request: Request) -> dict:
+    repos = _repos(request)
+    items = getattr(repos.dss, "list_packages", lambda: [])()
+    return {
+        "packages": [
+            {
+                "id": str(item.id),
+                "alert_ids": [str(a) for a in item.alert_ids],
+                "gaps": list(item.gaps),
+                "recommendation_count": len(item.recommendations),
+                "opened_at": item.opened_at.isoformat(),
+            }
+            for item in items
+        ]
+    }

@@ -198,7 +198,13 @@ def run_e2e_scientific_dss(
         "Human review of DEMO / NON-SCIENTIFIC CRW external SST watch for the heritage DEMO Spot. "
         "Does not claim local temperature, thermal ground truth, or scientific threshold validation."
     ),
+    through: str = "outcome",
 ) -> Phase712Result:
+    """Run the DEMO scientific DSS path.
+
+    through='dss' stops after DSS package + actor (for Visual MVP human decision).
+    through='outcome' continues Decision → Action → Outcome (Phase 7.12 default).
+    """
     defs = demo_definitions()
     repos.indicators.add_definition(defs["indicator"], defs["indicator_version"])
     repos.rules.add_rule(defs["rule"], defs["rule_version"])
@@ -263,6 +269,65 @@ def run_e2e_scientific_dss(
     )
     actor = Actor(id=ActorId(), display_name=actor_display_name)
     repos.actors.add(actor)
+
+    if through == "dss":
+        brief = render_dss_brief(
+            spot_intelligence=spot_intelligence,
+            indicator_value=indicator_value,
+            evaluation=critical.evaluation,
+            alert=critical.alert,
+            package=package,
+            decision=None,
+            snapshot=None,
+            defs=defs,
+            observation=sst_obs,
+            actor=actor,
+        )
+        machine_summary = {
+            "phase": PHASE,
+            "spot_id": DEMO_SPOT["spot_id"],
+            "threshold_status": THRESHOLD_STATUS,
+            "demo_only": DEMO_ONLY,
+            "scientifically_validated": SCIENTIFICALLY_VALIDATED,
+            "through": "dss",
+            "rule": {
+                "name": defs["rule"].name,
+                "version": defs["rule_version"].version,
+                "threshold_name": DEMO_THRESHOLD_NAME,
+                "threshold_value": DEMO_SST_WATCH_THRESHOLD,
+                "operator": defs["rule_version"].operator.value,
+                "outcome": critical.evaluation.outcome.value,
+                "reason": critical.evaluation.reason,
+            },
+            "alert_id": str(critical.alert.id),
+            "dss_package_id": str(package.id),
+            "actor_id": str(actor.id),
+            "decision_id": None,
+            "action_id": None,
+            "outcome_id": None,
+            "thermal_ground_truth": "NOT_AVAILABLE",
+            "local_estimation": "NOT_AUTHORIZED",
+            "downscaling": "NOT_AUTHORIZED",
+            "ml_implementation": "NOT_AUTHORIZED",
+            "imr_dependency": "NONE",
+            "autonomous_action": False,
+            "autonomous_decision": False,
+        }
+        return Phase712Result(
+            spot_intelligence=spot_intelligence,
+            observations=tuple(observations),
+            indicator_value=indicator_value,
+            evaluation=critical.evaluation,
+            alert=critical.alert,
+            dss_package=package,
+            decision=None,
+            action=None,
+            outcome=None,
+            snapshot=None,
+            brief=brief,
+            machine_summary=machine_summary,
+        )
+
     decision = record_human_decision(
         repos,
         actor=actor,
@@ -321,6 +386,7 @@ def run_e2e_scientific_dss(
         snapshot=snapshot,
         defs=defs,
         observation=sst_obs,
+        actor=actor,
     )
     machine_summary = {
         "phase": PHASE,
@@ -328,6 +394,7 @@ def run_e2e_scientific_dss(
         "threshold_status": THRESHOLD_STATUS,
         "demo_only": DEMO_ONLY,
         "scientifically_validated": SCIENTIFICALLY_VALIDATED,
+        "through": "outcome",
         "rule": {
             "name": defs["rule"].name,
             "version": defs["rule_version"].version,
@@ -344,6 +411,7 @@ def run_e2e_scientific_dss(
         "decision_id": str(decision.id),
         "action_id": str(action.id),
         "outcome_id": str(outcome.id),
+        "actor_id": str(actor.id),
         "thermal_ground_truth": "NOT_AVAILABLE",
         "local_estimation": "NOT_AUTHORIZED",
         "downscaling": "NOT_AUTHORIZED",
@@ -379,7 +447,9 @@ def render_dss_brief(
     snapshot: Any,
     defs: dict[str, Any],
     observation: Any,
+    actor: Any = None,
 ) -> str:
+    decided_at = decision.decided_at.isoformat() if decision is not None else "NOT RECORDED"
     lines = [
         "BALIZA DSS BRIEF — PHASE 7.12",
         "THRESHOLD STATUS: DEMO / NON-SCIENTIFIC",
@@ -395,7 +465,7 @@ def render_dss_brief(
         f"Grid / source time: {observation.observed_at.isoformat()}",
         f"Evaluated at: {evaluation.evaluated_at.isoformat()}",
         f"Alerted at: {alert.alerted_at.isoformat()}",
-        f"Decided at: {decision.decided_at.isoformat()}",
+        f"Decided at: {decided_at}",
         "",
         "CURRENT STATE",
         f"Rule outcome: {evaluation.outcome.value}",
@@ -448,15 +518,30 @@ def render_dss_brief(
     )
     for rec in package.recommendations:
         lines.append(f"- {rec.recommendation_id}: {rec.text} [{rec.epistemic_label}]")
+    if decision is None:
+        lines.extend(
+            [
+                "",
+                "HUMAN DECISION [DECISION]",
+                "Not recorded yet.",
+                f"Ready actor: {actor.id if actor is not None else 'UNKNOWN'}",
+                "This is a human decision boundary — options are not decisions.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "",
+                "HUMAN DECISION [DECISION]",
+                f"Actor: {decision.actor_id}",
+                f"Selected option: {decision.selected_option}",
+                f"Justification: {decision.justification}",
+                f"Snapshot: {snapshot.id if snapshot is not None else 'UNKNOWN'}",
+                f"Snapshot hash: {snapshot.content_hash if snapshot is not None else 'UNKNOWN'}",
+            ]
+        )
     lines.extend(
         [
-            "",
-            "HUMAN DECISION [DECISION]",
-            f"Actor: {decision.actor_id}",
-            f"Selected option: {decision.selected_option}",
-            f"Justification: {decision.justification}",
-            f"Snapshot: {snapshot.id}",
-            f"Snapshot hash: {snapshot.content_hash}",
             "",
             "BOUNDARIES",
             "THERMAL GROUND TRUTH = NOT_AVAILABLE",

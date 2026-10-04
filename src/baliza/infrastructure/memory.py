@@ -142,6 +142,9 @@ class InMemoryDssRepository:
     def get_package(self, package_id: DssPackageId) -> DssPackage | None:
         return self.packages.get(str(package_id))
 
+    def list_packages(self) -> list[DssPackage]:
+        return list(self.packages.values())
+
     def save_package(self, package: DssPackage) -> None:
         self.packages[str(package.id)] = package
 
@@ -164,6 +167,9 @@ class InMemoryDecisionRepository:
 
     def get(self, decision_id: DecisionId) -> Decision | None:
         return self._items.get(str(decision_id))
+
+    def list_all(self) -> list[Decision]:
+        return list(self._items.values())
 
 
 class InMemoryActionRepository:

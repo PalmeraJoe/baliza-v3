@@ -18,8 +18,10 @@ Phases are ordered by **architectural dependency**. Dates and staffing are `TBD`
 - **Phase 7 — Coral bleaching scientific foundation — RECORDED, models not authorized** (`docs/34-phase7-audit.md`)
 - **Phase 7.11 — Integrated Spot Intelligence — PARTIAL** (`docs/55-phase7.11-integrated-spot-intelligence.md`)
 - **Phase 7.12 — End-to-end scientific DSS — DEMONSTRATED** (`docs/56-phase7.12-end-to-end-scientific-dss-integration.md`)
-- **Phase 7.13 — Pilot Readiness Review — COMPLETED** (`docs/57-phase7.13-pilot-readiness-review.md`): Product GO with limitations; scientific pilot CONDITIONAL GO; ML NOT_AUTHORIZED; IMR required for scientific validation only
-- Next: Scientific Pilot — IMR (access + minimum data package + protocols) — **not started automatically**
+- **Phase 7.13 — Pilot Readiness Review — COMPLETED** (`docs/57-phase7.13-pilot-readiness-review.md`)
+- **Phase 7.14 — BALIZA Visual MVP — COMPLETED** (`docs/58-phase7.14-baliza-visual-mvp.md`)
+- **Phase 7.15 — Scientific Pilot Preparation / IMR — COMPLETED** (`docs/59-phase7.15-scientific-pilot-imr-specification.md`): meeting-ready data/governance/validation spec; connector not implemented; ML still not authorized
+- Next: IMR meeting / answers → choose next state A–E — **not started automatically**
 - Phases 8–13 — pending
 
 **Domain and architecture soft freeze** remain in force. Implementation must not violate FROZEN items in `docs/14-architecture-review.md`.
@@ -43,6 +45,8 @@ Phase 7    Scientific foundation recorded; ML and RBM not authorized (docs/34)
 Phase 7.11 Integrated Spot Intelligence PARTIAL (docs/55)
 Phase 7.12 E2E scientific DSS demonstrated on public data (docs/56)
 Phase 7.13 Pilot Readiness Review (docs/57) — scientific pilot next; ML after gate only
+Phase 7.14 BALIZA Visual MVP (docs/58) — UI presentation of existing DSS
+Phase 7.15 Scientific Pilot Preparation / IMR (docs/59) — specification only; await partner answers
 
 Post–Phase 7.13 intended sequence:
 BALIZA FOUNDATION → PUBLIC SCIENTIFIC DATA → END-TO-END DSS

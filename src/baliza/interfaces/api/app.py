@@ -61,6 +61,24 @@ def create_app(
     application = FastAPI(title="BALIZA V3", version=__version__)
     application.state.clock = SystemClock()
     application.state.session_factory = None
+    application.state.mvp_session = None
+    try:
+        from fastapi.middleware.cors import CORSMiddleware
+
+        application.add_middleware(
+            CORSMiddleware,
+            allow_origins=[
+                "http://localhost:5173",
+                "http://127.0.0.1:5173",
+                "http://localhost:4173",
+                "http://127.0.0.1:4173",
+            ],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    except Exception:
+        pass
     if database_url:
         factory, engine = open_database(database_url, create_schema=create_schema)
         application.state.session_factory = factory
