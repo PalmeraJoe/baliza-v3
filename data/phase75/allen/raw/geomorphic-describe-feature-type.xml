@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:coral-atlas="https://allencoralatlas.org/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" elementFormDefault="qualified" targetNamespace="https://allencoralatlas.org/">
+  <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://allencoralatlas.org/geoserver/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="geomorphic_data_verboseType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="class_name" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="geom" nillable="true" type="gml:MultiSurfacePropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="area_sqkm" nillable="true" type="xsd:double"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="geomorphic_data_verbose" substitutionGroup="gml:AbstractFeature" type="coral-atlas:geomorphic_data_verboseType"/>
+</xsd:schema>

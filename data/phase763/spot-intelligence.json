@@ -1,0 +1,407 @@
+{
+  "label": "DEMONSTRATION / RESEARCH TEST SPOT",
+  "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+  "geometry": {
+    "type": "POINT",
+    "latitude": -23.5,
+    "longitude": 152.0
+  },
+  "geometry_type": "POINT",
+  "crs": "UNKNOWN",
+  "spatial_precision": "UNKNOWN",
+  "valid_from": "UNKNOWN",
+  "valid_to": "UNKNOWN",
+  "temporal_validity": "UNKNOWN",
+  "coordinate_note": "Latitude -23.5 and longitude 152.0 are the heritage 50 km station coordinates NOAA published in orig24_names.txt. This is not a BALIZA resort.",
+  "measured": [],
+  "external_indicators": [
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_coraltemp_sst",
+      "dataset": "noaacrwsstDaily",
+      "value": "22.72",
+      "unit": "degree_C",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN",
+      "raw_file": "noaacrwsstDaily_2026-09-26.csv",
+      "sha256": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9",
+      "source_version": "CoralTemp-v3.1",
+      "transformation": "DERIVED"
+    },
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_sst_anomaly_v31",
+      "dataset": "noaacrwsstanomalyDaily",
+      "value": "0.78",
+      "unit": "degree_C",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN",
+      "raw_file": "noaacrwsstanomalyDaily_2026-09-26.csv",
+      "sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+      "source_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+      "transformation": "DERIVED"
+    },
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_sst_anomaly_1991_2020",
+      "dataset": "noaacrwsstanomalybaselineDaily",
+      "value": "0.4",
+      "unit": "degree_Celsius",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN",
+      "raw_file": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+      "sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+      "source_version": "1991-2020 climatological baseline",
+      "transformation": "DERIVED"
+    },
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_hotspot",
+      "dataset": "noaacrwhotspotDaily",
+      "value": "-4.39",
+      "unit": "degree_C",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "QUESTIONABLE",
+      "quality_basis": "BALIZA_DERIVED",
+      "raw_file": "noaacrwhotspotDaily_2026-09-26.csv",
+      "sha256": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3",
+      "source_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+      "transformation": "DERIVED"
+    },
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_dhw",
+      "dataset": "noaacrwdhwDaily",
+      "value": "0.0",
+      "unit": "degree_Celsius_weeks",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN",
+      "raw_file": "noaacrwdhwDaily_2026-09-26.csv",
+      "sha256": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86",
+      "source_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+      "transformation": "DERIVED"
+    },
+    {
+      "statement_kind": "FACT",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "source": "NOAA Coral Reef Watch",
+      "product": "crw_bleaching_alert_area_7d",
+      "dataset": "noaacrwbaa7dDaily",
+      "value": "0",
+      "unit": "stress_level",
+      "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+      "source_crs": "UNKNOWN",
+      "valid_time": "2026-09-26T12:00:00Z",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": null,
+      "retrieval_time": "2026-10-01",
+      "temporal_relation": "UNKNOWN",
+      "association_type": "UNKNOWN",
+      "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+      "source_precision": "GRID",
+      "applies_to": "retrieved cell only",
+      "cell_latitude": "-23.475",
+      "cell_longitude": "151.975",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN",
+      "raw_file": "noaacrwbaa7dDaily_2026-09-26.csv",
+      "sha256": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4",
+      "source_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+      "transformation": "DERIVED"
+    }
+  ],
+  "derived_indicators": [],
+  "estimated": [],
+  "downscaling": "NOT AUTHORIZED",
+  "spatial_associations": [
+    {
+      "source": "NOAA Coral Reef Watch",
+      "statement_kind": "INFERENCE",
+      "association_type": "UNKNOWN",
+      "pixel_count_if_axes_match": 4,
+      "confirmed_intersection": false,
+      "pixels": [
+        {
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "retrieved": true,
+          "values": "see external_indicators"
+        },
+        {
+          "latitude": -23.475,
+          "longitude": 152.025,
+          "retrieved": false,
+          "values": "UNKNOWN"
+        },
+        {
+          "latitude": -23.525,
+          "longitude": 151.975,
+          "retrieved": false,
+          "values": "UNKNOWN"
+        },
+        {
+          "latitude": -23.525,
+          "longitude": 152.025,
+          "retrieved": false,
+          "values": "UNKNOWN"
+        }
+      ],
+      "reason": "The published point is 0.025 degrees from four documented cell centers. The grid CRS is UNKNOWN, so those centers are not confirmed as intersections. Values exist for one retrieved cell only. The other three were not retrieved."
+    }
+  ],
+  "temporal_associations": [
+    {
+      "source": "NOAA Coral Reef Watch",
+      "source_time": "2026-09-26T12:00:00Z",
+      "spot_time": "UNKNOWN",
+      "relation": "UNKNOWN"
+    }
+  ],
+  "quality": [
+    {
+      "product": "crw_coraltemp_sst",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN"
+    },
+    {
+      "product": "crw_sst_anomaly_v31",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN"
+    },
+    {
+      "product": "crw_sst_anomaly_1991_2020",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN"
+    },
+    {
+      "product": "crw_hotspot",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "QUESTIONABLE",
+      "quality_basis": "BALIZA_DERIVED"
+    },
+    {
+      "product": "crw_dhw",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN"
+    },
+    {
+      "product": "crw_bleaching_alert_area_7d",
+      "source_quality": "UNKNOWN",
+      "baliza_quality": "UNKNOWN",
+      "quality_basis": "UNKNOWN"
+    }
+  ],
+  "freshness": {
+    "data_timestamp": "2026-09-26T12:00:00Z",
+    "retrieval_timestamp": "2026-10-01",
+    "age": "UNKNOWN",
+    "freshness_status": "UNKNOWN",
+    "note": "No freshness cutoff is approved. The retrieval clock has no sub-second time."
+  },
+  "uncertainty": {
+    "measurement_uncertainty": "UNKNOWN",
+    "spatial_uncertainty": "UNKNOWN",
+    "temporal_uncertainty": "UNKNOWN",
+    "association_uncertainty": "UNKNOWN",
+    "model_uncertainty": "UNKNOWN"
+  },
+  "data_gaps": [
+    {
+      "kind": "GROUND TRUTH GAP",
+      "detail": "No in-situ measurement at this point."
+    },
+    {
+      "kind": "DATA GAP",
+      "detail": "Three of the four candidate NOAA cells were not retrieved."
+    },
+    {
+      "kind": "SPATIAL GAP",
+      "detail": "Allen WFS bbox does not contain this point. Classes are not attached."
+    },
+    {
+      "kind": "SOURCE GAP",
+      "detail": "EMODnet depth was not retrieved. The European DTM does not cover this cell."
+    },
+    {
+      "kind": "LICENSE / ACCESS GAP",
+      "detail": "MERMAID sites were not authorized. No survey row is stored."
+    },
+    {
+      "kind": "QUALITY GAP",
+      "detail": "NOAA rows carry no source quality flag. HotSpot is QUESTIONABLE."
+    },
+    {
+      "kind": "PROVENANCE GAP",
+      "detail": "NOAA retrieval has a calendar date and no sub-second clock."
+    }
+  ],
+  "source_conflicts": [
+    {
+      "dimension": "SST anomaly on the retrieved cell, not on the spot",
+      "conflict": true,
+      "resolved": false,
+      "products": [
+        {
+          "statement_kind": "FACT",
+          "scientific_layer": "EXTERNAL_INDICATOR",
+          "source": "NOAA Coral Reef Watch",
+          "product": "crw_sst_anomaly_v31",
+          "dataset": "noaacrwsstanomalyDaily",
+          "value": "0.78",
+          "unit": "degree_C",
+          "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+          "source_crs": "UNKNOWN",
+          "valid_time": "2026-09-26T12:00:00Z",
+          "source_time": "2026-09-26T12:00:00Z",
+          "observation_time": null,
+          "retrieval_time": "2026-10-01",
+          "temporal_relation": "UNKNOWN",
+          "association_type": "UNKNOWN",
+          "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+          "source_precision": "GRID",
+          "applies_to": "retrieved cell only",
+          "cell_latitude": "-23.475",
+          "cell_longitude": "151.975",
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "quality_basis": "UNKNOWN",
+          "raw_file": "noaacrwsstanomalyDaily_2026-09-26.csv",
+          "sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+          "source_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+          "transformation": "DERIVED"
+        },
+        {
+          "statement_kind": "FACT",
+          "scientific_layer": "EXTERNAL_INDICATOR",
+          "source": "NOAA Coral Reef Watch",
+          "product": "crw_sst_anomaly_1991_2020",
+          "dataset": "noaacrwsstanomalybaselineDaily",
+          "value": "0.4",
+          "unit": "degree_Celsius",
+          "source_resolution": "0.05 degree grid as documented; file attribute is a binary 0.05",
+          "source_crs": "UNKNOWN",
+          "valid_time": "2026-09-26T12:00:00Z",
+          "source_time": "2026-09-26T12:00:00Z",
+          "observation_time": null,
+          "retrieval_time": "2026-10-01",
+          "temporal_relation": "UNKNOWN",
+          "association_type": "UNKNOWN",
+          "association_method": "Not compared. Spot CRS and grid CRS are both UNKNOWN.",
+          "source_precision": "GRID",
+          "applies_to": "retrieved cell only",
+          "cell_latitude": "-23.475",
+          "cell_longitude": "151.975",
+          "source_quality": "UNKNOWN",
+          "baliza_quality": "UNKNOWN",
+          "quality_basis": "UNKNOWN",
+          "raw_file": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+          "sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+          "source_version": "1991-2020 climatological baseline",
+          "transformation": "DERIVED"
+        }
+      ]
+    }
+  ],
+  "allen_associated": false,
+  "alerts": [],
+  "playbook_options": [],
+  "local_estimate": "NONE",
+  "mermaid_status": "ACCESS_GAP",
+  "mermaid_records_found": "UNKNOWN",
+  "mermaid_candidates": [],
+  "mermaid_spatial_associations": [],
+  "mermaid_temporal_associations": [],
+  "mermaid_ground_truth_status": "UNVERIFIED",
+  "mermaid_data_gap": "ACCESS_GAP",
+  "mermaid_provenance": {
+    "status": "PARTIAL",
+    "raw_body_stored": false,
+    "australia_response_sha256": "342a5f63abd691e9087894008d5c8071a9dab8982732eefa8a9169beccfd5631",
+    "retrieval_timestamp": "Thu, 01 Oct 2026 15:07:40 GMT",
+    "dataset": "https://api.datamermaid.org/v1/summarysampleevents/"
+  }
+}

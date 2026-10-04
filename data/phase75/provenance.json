@@ -1,0 +1,21 @@
+{
+  "label": "DEMONSTRATION / RESEARCH TEST AREA",
+  "note": "Public CRW grid cell. Not a BALIZA resort. Not a local observation.",
+  "retrieval_calendar_date": "2026-10-01",
+  "retrieval_limitation": "The downloader did not write a sub-second retrieval timestamp into these files.",
+  "endpoint": "https://coastwatch.noaa.gov/erddap/griddap/",
+  "request": {
+    "time": "2026-09-26T12:00:00Z",
+    "latitude": -23.475,
+    "longitude": 151.975,
+    "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+  },
+  "files": [
+    {"name": "noaacrwsstDaily_2026-09-26.csv", "sha256": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9"},
+    {"name": "noaacrwsstanomalyDaily_2026-09-26.csv", "sha256": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a"},
+    {"name": "noaacrwsstanomalybaselineDaily_2026-09-26.csv", "sha256": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66"},
+    {"name": "noaacrwhotspotDaily_2026-09-26.csv", "sha256": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3"},
+    {"name": "noaacrwdhwDaily_2026-09-26.csv", "sha256": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86"},
+    {"name": "noaacrwbaa7dDaily_2026-09-26.csv", "sha256": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4"}
+  ]
+}

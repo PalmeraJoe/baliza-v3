@@ -1,0 +1,19 @@
+{
+  "comparison": "Same WFS GetFeature URLs as the stored raw files, requested again at 2026-10-01T07:52:10Z.",
+  "benthic": {
+    "same_bytes": false,
+    "same_class_and_area": true,
+    "numberMatched": 47,
+    "repeat_timestamp": "2026-10-01T07:52:10.378Z",
+    "repeat_bytes": 7891
+  },
+  "geomorphic": {
+    "same_bytes": false,
+    "same_class_and_area": true,
+    "numberMatched": 26,
+    "repeat_timestamp": "2026-10-01T07:52:10.594Z",
+    "repeat_bytes": 4646
+  },
+  "difference": "Feature ids and the service timeStamp change. Class names and area_sqkm did not.",
+  "repeat_body_not_stored": "The second response was not written over the raw file."
+}

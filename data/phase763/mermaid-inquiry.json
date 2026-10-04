@@ -1,0 +1,85 @@
+{
+  "label": "OFFICIAL MERMAID READ. People fields omitted.",
+  "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+  "queries": [
+    {
+      "name": "summary_sample_events_page",
+      "url": "https://api.datamermaid.org/v1/summarysampleevents/?limit=1",
+      "http_status": 200,
+      "http_date": "Thu, 01 Oct 2026 15:06:22 GMT",
+      "response_sha256": "4056fcef2a815b8cecd204351fc4a7331cdf3f094ec723b3df523a40172cb6f2",
+      "count": 16557,
+      "raw_body_stored": false
+    },
+    {
+      "name": "summary_sites",
+      "url": "https://api.datamermaid.org/v1/summarysites/?limit=1",
+      "http_status": 404,
+      "http_date": "Thu, 01 Oct 2026 15:06:23 GMT",
+      "response_sha256": "5547992afdadb59737c5c0feb1a35dff294cd27145bf290c031737ecf8a2577d",
+      "count": null,
+      "raw_body_stored": false
+    },
+    {
+      "name": "projects",
+      "url": "https://api.datamermaid.org/v1/projects/?limit=1",
+      "http_status": 200,
+      "http_date": "Thu, 01 Oct 2026 15:06:24 GMT",
+      "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+      "count": 0,
+      "raw_body_stored": false
+    },
+    {
+      "name": "sites",
+      "url": "https://api.datamermaid.org/v1/sites/?limit=1",
+      "http_status": 401,
+      "http_date": "Thu, 01 Oct 2026 15:06:24 GMT",
+      "response_sha256": "683e81163103ba1f17e080266435f98c52addb044bbf2592efbb7d143c18672d",
+      "count": null,
+      "raw_body_stored": false
+    },
+    {
+      "name": "site_name_heron",
+      "url": "https://api.datamermaid.org/v1/summarysampleevents/?site_name=Heron&limit=5",
+      "http_status": 200,
+      "http_date": "Thu, 01 Oct 2026 15:06:25 GMT",
+      "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+      "count": 0,
+      "raw_body_stored": false
+    },
+    {
+      "name": "site_name_heron_island",
+      "url": "https://api.datamermaid.org/v1/summarysampleevents/?site_name=Heron+Island&limit=20",
+      "http_status": 200,
+      "http_date": "Thu, 01 Oct 2026 15:06:26 GMT",
+      "response_sha256": "0595424161ea863805d9b92c0e52d7aa1e3c46ec58cd8f0d6933759006a5fb74",
+      "count": 0,
+      "raw_body_stored": false
+    },
+    {
+      "name": "australia",
+      "url": "https://api.datamermaid.org/v1/summarysampleevents/?country_name=Australia&limit=1",
+      "http_status": 200,
+      "http_date": "Thu, 01 Oct 2026 15:06:27 GMT",
+      "response_sha256": "18f580a46aaedb02169930dab3fd7a92ca94769480eeaf9033d679ab4d28d964",
+      "count": 45,
+      "raw_body_stored": false
+    },
+    {
+      "name": "australia_on_grid_day",
+      "url": "https://api.datamermaid.org/v1/summarysampleevents/?country_name=Australia&date_min=2026-09-26&date_max=2026-09-26&limit=100",
+      "http_status": 502,
+      "http_date": "Thu, 01 Oct 2026 15:06:34 GMT",
+      "response_sha256": "880c929020d4b79bf1995656d21d9a6859aab3a9460f941eb0b1a6e5502ee4cc",
+      "count": null,
+      "raw_body_stored": false
+    }
+  ],
+  "date_filter_constrained_sample_date": false,
+  "returned_sample_date_min": null,
+  "returned_sample_date_max": null,
+  "returned_count": null,
+  "any_coordinate_equals_spot": false,
+  "spatial_search_completed": false,
+  "mermaid_status": "ACCESS_GAP"
+}

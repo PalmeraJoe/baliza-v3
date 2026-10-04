@@ -1,0 +1,655 @@
+{
+  "url": "https://api.datamermaid.org/v1/summarysampleevents/?country_name=Australia&limit=100",
+  "http_status": 200,
+  "http_date": "Thu, 01 Oct 2026 15:07:40 GMT",
+  "response_sha256": "342a5f63abd691e9087894008d5c8071a9dab8982732eefa8a9169beccfd5631",
+  "raw_body_stored": false,
+  "count": 45,
+  "returned": 45,
+  "next": null,
+  "records": [
+    {
+      "sample_event_id": "f251bf04-417a-483c-8acf-cf914d8505bb",
+      "site_id": "41965923-948e-4546-b85d-9f49a282a1cb",
+      "project_id": "b3e802d6-f3f9-47ad-b902-d7a3dac5db8a",
+      "site_name": "Bundegi_B5_DBCA",
+      "country_name": "Australia",
+      "latitude": -21.82735998,
+      "longitude": 114.1797,
+      "sample_date": "2020-10-01",
+      "depth_avg": 2.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "5081f510-9232-4405-ad9e-d2590d037ca0",
+      "site_id": "daa3ceb7-4431-4f35-bc2c-a2896c2cd31b",
+      "project_id": "b3e802d6-f3f9-47ad-b902-d7a3dac5db8a",
+      "site_name": "Bundegi_B6_DBCA",
+      "country_name": "Australia",
+      "latitude": -21.82376004,
+      "longitude": 114.1846,
+      "sample_date": "2020-10-01",
+      "depth_avg": 3.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "dbf096ce-f5dd-44a8-a1ab-694e744e3a80",
+      "site_id": "40aeac37-4482-43e9-a1c7-5f442f07c851",
+      "project_id": "b3e802d6-f3f9-47ad-b902-d7a3dac5db8a",
+      "site_name": "Bundegi_B7_DBCA",
+      "country_name": "Australia",
+      "latitude": -21.86122337,
+      "longitude": 114.1612,
+      "sample_date": "2020-10-01",
+      "depth_avg": 3.5,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "09889889-1509-40aa-9d94-14bcdb14a3a0",
+      "site_id": "578276f2-e710-4c9c-84bb-351531d2b00f",
+      "project_id": "056a7e3c-9873-4da0-b139-cfd5e535b8de",
+      "site_name": "Bundigi",
+      "country_name": "Australia",
+      "latitude": -21.835467,
+      "longitude": 114.178,
+      "sample_date": "2021-03-23",
+      "depth_avg": 3.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "15c5e103-484e-457b-a91c-d8f36409175c",
+      "site_id": "578276f2-e710-4c9c-84bb-351531d2b00f",
+      "project_id": "056a7e3c-9873-4da0-b139-cfd5e535b8de",
+      "site_name": "Bundigi",
+      "country_name": "Australia",
+      "latitude": -21.835467,
+      "longitude": 114.178,
+      "sample_date": "2021-03-24",
+      "depth_avg": 3.17,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "8267cb20-4dc1-49b9-accf-294b80af9409",
+      "site_id": "68f0f740-b2e1-4a6d-98c3-d7a9078dc218",
+      "project_id": "056a7e3c-9873-4da0-b139-cfd5e535b8de",
+      "site_name": "Eva Island",
+      "country_name": "Australia",
+      "latitude": -21.91725,
+      "longitude": 114.432466,
+      "sample_date": "2021-03-20",
+      "depth_avg": 4.67,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "fcfea5eb-6ff1-45fa-973c-bdba317ea209",
+      "site_id": "bc799e08-d58c-48cd-908c-82e9632b7f62",
+      "project_id": "056a7e3c-9873-4da0-b139-cfd5e535b8de",
+      "site_name": "Fly Island",
+      "country_name": "Australia",
+      "latitude": -21.79985,
+      "longitude": 114.553966,
+      "sample_date": "2021-03-21",
+      "depth_avg": 3.8,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "d477232c-1f75-4808-a044-f6c13a978e04",
+      "site_id": "43855e64-dd72-48b7-8861-598a3a33dffa",
+      "project_id": "056a7e3c-9873-4da0-b139-cfd5e535b8de",
+      "site_name": "Somerville Island",
+      "country_name": "Australia",
+      "latitude": -21.95775,
+      "longitude": 114.493134,
+      "sample_date": "2021-03-22",
+      "depth_avg": 4.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "27f932c4-ea2c-413f-8882-8cab096902f0",
+      "site_id": "47e182c7-2be2-4421-92a5-3939948c5b15",
+      "project_id": "6177b770-3b63-4691-b2d9-055a055324d7",
+      "site_name": "Bundigi",
+      "country_name": "Australia",
+      "latitude": -21.835467,
+      "longitude": 114.178,
+      "sample_date": "2021-10-04",
+      "depth_avg": 3.3,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "48f7aff4-21cb-4c74-9cdd-cfea127153f1",
+      "site_id": "3c0065f4-88c4-4f01-8af7-a11709bf2108",
+      "project_id": "6177b770-3b63-4691-b2d9-055a055324d7",
+      "site_name": "Eva Island",
+      "country_name": "Australia",
+      "latitude": -21.91725,
+      "longitude": 114.432466,
+      "sample_date": "2021-10-10",
+      "depth_avg": 4.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "ab193c34-077e-4fdf-bab2-f7d7c9517f20",
+      "site_id": "e32dceab-81d8-4939-b72a-42770d797249",
+      "project_id": "6177b770-3b63-4691-b2d9-055a055324d7",
+      "site_name": "Fly Island",
+      "country_name": "Australia",
+      "latitude": -21.79985,
+      "longitude": 114.553966,
+      "sample_date": "2021-10-11",
+      "depth_avg": 4.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "b2156eb5-f059-40ff-9c32-56f6852a8713",
+      "site_id": "63f25c8b-5d66-446b-a123-e354ce0f2093",
+      "project_id": "6177b770-3b63-4691-b2d9-055a055324d7",
+      "site_name": "Somerville Island",
+      "country_name": "Australia",
+      "latitude": -21.95775,
+      "longitude": 114.493134,
+      "sample_date": "2021-10-07",
+      "depth_avg": 3.5,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    },
+    {
+      "sample_event_id": "4ad99fec-210f-4831-afba-6de684e25f59",
+      "site_id": "5c74a723-508d-441d-80b6-4573c4587421",
+      "project_id": "491697d7-0ca0-4d6a-a9ad-eb10789e0e4c",
+      "site_name": "Dev's Den",
+      "country_name": "Australia",
+      "latitude": -19.364145,
+      "longitude": 148.339859,
+      "sample_date": "2026-08-28",
+      "depth_avg": 10.0,
+      "protocol_names": [
+        "benthicpit"
+      ]
+    },
+    {
+      "sample_event_id": "cc51ddb4-c0be-49f2-a59c-2b74197693a5",
+      "site_id": "5c74a723-508d-441d-80b6-4573c4587421",
+      "project_id": "491697d7-0ca0-4d6a-a9ad-eb10789e0e4c",
+      "site_name": "Dev's Den",
+      "country_name": "Australia",
+      "latitude": -19.364145,
+      "longitude": 148.339859,
+      "sample_date": "2026-08-28",
+      "depth_avg": 10.0,
+      "protocol_names": [
+        "benthicpit"
+      ]
+    },
+    {
+      "sample_event_id": "fb43439c-289b-4be4-af51-53925742bd8b",
+      "site_id": "a754e853-e7d9-4630-b5af-92c867235001",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesExposed1Slope",
+      "country_name": "Australia",
+      "latitude": -18.81833333,
+      "longitude": 147.6654167,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "0ed7191d-bc18-4bca-b112-0b194847a917",
+      "site_id": "ea94bfe0-55bd-42c5-ba84-d6ae1394069f",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesExposed2Slope",
+      "country_name": "Australia",
+      "latitude": -18.81686111,
+      "longitude": 147.6673611,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "5b50e066-7b6c-46e6-91e5-9dcabed96ce8",
+      "site_id": "c3f7b33f-95cd-44a7-816f-f74a168015e5",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesExposed3Slope",
+      "country_name": "Australia",
+      "latitude": -18.81038889,
+      "longitude": 147.6711944,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "214b6831-ef1d-4b0c-88c1-4e282111992f",
+      "site_id": "7bfbdfdd-9bce-4f41-b478-c0b0dcb8dcdf",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesSheltered1Slope",
+      "country_name": "Australia",
+      "latitude": -18.80180556,
+      "longitude": 147.6558056,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "97cac64c-ffee-4f91-a659-35ee3d42029c",
+      "site_id": "10adfc29-bc0d-4f51-83f2-ae2b741a65b0",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesSheltered2Slope",
+      "country_name": "Australia",
+      "latitude": -18.80294444,
+      "longitude": 147.6511111,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "e677eea4-cf0b-4004-964b-3d31199d9e6d",
+      "site_id": "ae4dd8e9-05f8-4d43-95e9-22c85ef042a2",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "DaviesSheltered3Slope",
+      "country_name": "Australia",
+      "latitude": -18.80358333,
+      "longitude": 147.6472222,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "3d996499-9550-40c0-979e-73cd515658a7",
+      "site_id": "f6febb12-72f4-4236-8958-3162d7cb6691",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerExposed1Slope",
+      "country_name": "Australia",
+      "latitude": -18.64647222,
+      "longitude": 147.0528056,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "67d870b0-140c-48ce-8ec1-6d3770ed7762",
+      "site_id": "f9e58faa-a1ee-4bef-8ddc-aad5cf4e953e",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerExposed2Slope",
+      "country_name": "Australia",
+      "latitude": -18.64605556,
+      "longitude": 147.0489444,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "22451aea-1472-426e-a2d9-0fc6b603dc52",
+      "site_id": "4f0a5a8a-c061-42b9-b613-e9aa5e17ab89",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerExposed3Slope",
+      "country_name": "Australia",
+      "latitude": -18.6465,
+      "longitude": 147.0441944,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "b01dcad1-4916-466f-acde-e6ae7f2a5593",
+      "site_id": "e254993e-6070-473e-8b24-d243942456a9",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerSheltered1Slope",
+      "country_name": "Australia",
+      "latitude": -18.80180556,
+      "longitude": 147.6558056,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "2925dbf2-4651-4b45-b961-f3f261f20d55",
+      "site_id": "9f0b450e-3bf6-4ac9-bf71-3b26b3152073",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerSheltered2Slope",
+      "country_name": "Australia",
+      "latitude": -18.80294444,
+      "longitude": 147.6511111,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "acd95e0f-0e91-4346-a270-07967cd2b53d",
+      "site_id": "19250b30-ebba-4b71-8ef9-fa5547e6b188",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "John BrewerSheltered3Slope",
+      "country_name": "Australia",
+      "latitude": -18.80358333,
+      "longitude": 147.6472222,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "dd0fc330-46aa-448f-beae-66008be94ba8",
+      "site_id": "b446e568-0207-4985-8984-bf1a835d6e84",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibExposed1Slope",
+      "country_name": "Australia",
+      "latitude": -18.49158333,
+      "longitude": 146.8794444,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "02df0e9f-ac88-4225-9099-e4c971b98b6a",
+      "site_id": "749ae3f1-cb0f-4d40-8975-5cf4cd7c5137",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibExposed2Slope",
+      "country_name": "Australia",
+      "latitude": -18.49025,
+      "longitude": 146.8816111,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "a57c1470-ee77-41d3-be2e-40407e775969",
+      "site_id": "ff668952-35b2-4aa5-ac7a-fb5d37b4d3b8",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibExposed3Slope",
+      "country_name": "Australia",
+      "latitude": -18.48833333,
+      "longitude": 146.8825278,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "0296416b-23f4-45f8-b2ac-026b0a7f5470",
+      "site_id": "63d63ba8-f568-4a6d-ac1a-4c7108d71043",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibSheltered1Slope",
+      "country_name": "Australia",
+      "latitude": -18.47230556,
+      "longitude": 146.8766944,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "c453c961-58ff-4bba-893e-2260795f1d2e",
+      "site_id": "108e08d2-53c6-4661-9a33-463461bce2dc",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibSheltered2Slope",
+      "country_name": "Australia",
+      "latitude": -18.47391667,
+      "longitude": 146.8792222,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "fda94785-ad09-4ad6-8b12-e5e388bf2a04",
+      "site_id": "1ff7b5be-5f76-4023-99ca-1c8121077981",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "RibSheltered3Slope",
+      "country_name": "Australia",
+      "latitude": -18.47469444,
+      "longitude": 146.8800833,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "8b68f271-5ae9-472a-866e-54f56db39032",
+      "site_id": "98b9818e-f59b-4938-be4f-59d746c99c6e",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkExposed1Slope",
+      "country_name": "Australia",
+      "latitude": -18.40477778,
+      "longitude": 146.83125,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "d6747086-053b-4109-924e-6d3922baa847",
+      "site_id": "9c7d15cb-3351-47ef-b42a-539e9aa1c12b",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkExposed2Slope",
+      "country_name": "Australia",
+      "latitude": -18.40094444,
+      "longitude": 146.8373056,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "926ee294-b1eb-4ebf-a897-d57a98e964f6",
+      "site_id": "6f262961-bfa1-4975-849e-853ca746e18f",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkExposed3Slope",
+      "country_name": "Australia",
+      "latitude": -18.39569444,
+      "longitude": 146.8415278,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "9248bf95-acf4-41ea-ad0c-b46628bbe0d4",
+      "site_id": "bf60030f-346c-4233-bf5e-f44b410c6260",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkSheltered1Slope",
+      "country_name": "Australia",
+      "latitude": -18.35247222,
+      "longitude": 146.7657222,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "38d7ceca-166d-4d1a-8880-2e4850137508",
+      "site_id": "c1a79b33-eff4-4ef3-b006-3b493730a1bc",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkSheltered2Slope",
+      "country_name": "Australia",
+      "latitude": -18.3765,
+      "longitude": 146.7754167,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "f3de6add-5303-49b2-b710-b1cd661a4f28",
+      "site_id": "59bd478b-fdc9-41bc-9a02-70cef1f0f8bf",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "TrunkSheltered3Slope",
+      "country_name": "Australia",
+      "latitude": -18.38061111,
+      "longitude": 146.7768889,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "d988495f-7078-45c4-8ee6-1e3b9037b68c",
+      "site_id": "b1af03a1-f8f6-4ae5-b98b-8f86265a0e3b",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerExposed1Slope",
+      "country_name": "Australia",
+      "latitude": -18.80444444,
+      "longitude": 147.5306667,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "3e9885d7-71dd-486c-886e-b82505eee691",
+      "site_id": "a22aee23-01b1-4a2f-bf67-a37928c9417c",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerExposed2Slope",
+      "country_name": "Australia",
+      "latitude": -18.80052778,
+      "longitude": 147.535,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "79b4831f-a972-4a23-8b9d-82c83e406b60",
+      "site_id": "9a221716-718d-435b-85f5-e03c00b5ef32",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerExposed3Slope",
+      "country_name": "Australia",
+      "latitude": -18.80163889,
+      "longitude": 147.5354444,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "38fe409f-e37e-430f-924d-bba0d804e58b",
+      "site_id": "80a91ce7-8f32-47a1-a4ab-c78b415858cc",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerSheltered1Slope",
+      "country_name": "Australia",
+      "latitude": -18.79252778,
+      "longitude": 147.5258333,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "b747fd2d-5587-46a2-95bd-91a7633ec63c",
+      "site_id": "02244fda-1891-46a8-9117-27cb23881f83",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerSheltered2Slope",
+      "country_name": "Australia",
+      "latitude": -18.79291667,
+      "longitude": 147.5251667,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "cd5c408f-2086-4c19-9ca6-0233ef786890",
+      "site_id": "e6ea4e24-d2cd-4435-8bdc-ddba66f9a57d",
+      "project_id": "c6951c05-974f-42b8-b89d-2b13ba2e3407",
+      "site_name": "WheelerSheltered3Slope",
+      "country_name": "Australia",
+      "latitude": -18.79236111,
+      "longitude": 147.5273333,
+      "sample_date": "2011-02-10",
+      "depth_avg": 8.0,
+      "protocol_names": [
+        "beltfish"
+      ]
+    },
+    {
+      "sample_event_id": "cd611fed-936e-4077-8ece-376e955f4ad3",
+      "site_id": "a696887b-5237-4081-bf07-d1b740f0dcd2",
+      "project_id": "9f0d9d24-6727-4014-85b5-926ca931e9a0",
+      "site_name": "Lady Elliot Island Dive Site",
+      "country_name": "Australia",
+      "latitude": -24.110136,
+      "longitude": 152.711203,
+      "sample_date": "2025-03-15",
+      "depth_avg": 20.0,
+      "protocol_names": [
+        "colonies_bleached",
+        "quadrat_benthic_percent"
+      ]
+    }
+  ]
+}

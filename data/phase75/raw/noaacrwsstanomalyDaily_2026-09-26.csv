@@ -1,0 +1,3 @@
+time,latitude,longitude,sea_surface_temperature_anomaly
+UTC,degrees_north,degrees_east,degree_C
+2026-09-26T12:00:00Z,-23.475,151.975,0.78

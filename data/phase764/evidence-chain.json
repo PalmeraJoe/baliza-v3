@@ -1,0 +1,725 @@
+{
+  "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+  "label": "DEMONSTRATION / RESEARCH TEST SPOT",
+  "evidence": [
+    {
+      "evidence_id": "noaa-noaacrwsstDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwsstDaily",
+      "product": "crw_coraltemp_sst",
+      "product_version": "CoralTemp-v3.1",
+      "variable": "analysed_sst",
+      "value": "22.72",
+      "unit": "degree_C",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwsstDaily",
+        "raw_file_reference": "noaacrwsstDaily_2026-09-26.csv",
+        "raw_checksum": "bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "noaa-noaacrwsstanomalyDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwsstanomalyDaily",
+      "product": "crw_sst_anomaly_v31",
+      "product_version": "Satellite_Daily_Global_5km_SST_Anomaly",
+      "variable": "sea_surface_temperature_anomaly",
+      "value": "0.78",
+      "unit": "degree_C",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwsstanomalyDaily",
+        "raw_file_reference": "noaacrwsstanomalyDaily_2026-09-26.csv",
+        "raw_checksum": "630e0e0868f4cc7c4a46e550d40a91170dc94dc4849b38f1c655de2be263c88a",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "noaa-noaacrwsstanomalybaselineDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwsstanomalybaselineDaily",
+      "product": "crw_sst_anomaly_1991_2020",
+      "product_version": "1991-2020 climatological baseline",
+      "variable": "sea_surface_temperature_anomaly",
+      "value": "0.4",
+      "unit": "degree_Celsius",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwsstanomalybaselineDaily",
+        "raw_file_reference": "noaacrwsstanomalybaselineDaily_2026-09-26.csv",
+        "raw_checksum": "9a563090b9186ca529b0293de0fae994006fd06b8d9e07a18d56eb19d249bb66",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "noaa-noaacrwhotspotDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwhotspotDaily",
+      "product": "crw_hotspot",
+      "product_version": "Satellite_Daily_Global_5km_Coral_Bleaching_HotSpot",
+      "variable": "hotspot",
+      "value": "-4.39",
+      "unit": "degree_C",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "QUESTIONABLE",
+        "association": "UNKNOWN",
+        "quality_basis": "BALIZA_DERIVED",
+        "quality_method": "phase75 hotspot sign check",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwhotspotDaily",
+        "raw_file_reference": "noaacrwhotspotDaily_2026-09-26.csv",
+        "raw_checksum": "e1dcdd488f932beecc80c8b247fa1139ae9ead7c0ab3bd152b1b44f8d58d65e3",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "noaa-noaacrwdhwDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwdhwDaily",
+      "product": "crw_dhw",
+      "product_version": "Satellite_Daily_Global_5km_Degree_Heating_Week",
+      "variable": "degree_heating_week",
+      "value": "0.0",
+      "unit": "degree_Celsius_weeks",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwdhwDaily",
+        "raw_file_reference": "noaacrwdhwDaily_2026-09-26.csv",
+        "raw_checksum": "6bc433440aa254a3123cfda251143d85bcfbf2961b4792b959ed6ad448f9bb86",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "noaa-noaacrwbaa7dDaily",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "NOAA Coral Reef Watch",
+      "dataset": "noaacrwbaa7dDaily",
+      "product": "crw_bleaching_alert_area_7d",
+      "product_version": "Satellite_Daily_Global_5km_7day_Maximum_Bleaching_Alert_Area_Composite",
+      "variable": "bleaching_alert_area",
+      "value": "0",
+      "unit": "stress_level",
+      "scientific_layer": "EXTERNAL_INDICATOR",
+      "epistemic_label": "FACT",
+      "source_time": "2026-09-26T12:00:00Z",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "GRID",
+      "temporal_precision": "DAY",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "noaacrwbaa7dDaily",
+        "raw_file_reference": "noaacrwbaa7dDaily_2026-09-26.csv",
+        "raw_checksum": "10c8ebb96b6c2c5a79ccdd35162972551be1746285cbe821df7b0858548845e4",
+        "retrieval_timestamp": "2026-10-01",
+        "source_url": "https://coastwatch.noaa.gov/erddap/griddap/",
+        "request_parameters": {
+          "time": "2026-09-26T12:00:00Z",
+          "latitude": -23.475,
+          "longitude": 151.975,
+          "why_this_cell": "One CRW pixel center adjacent to the heritage 50 km virtual-station coordinate published by NOAA at -23.5, 152.0 in orig24_names.txt. That published point is equidistant from four 0.05 degree centers, so it does not identify a unique cell."
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "QUALITY_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": true
+    },
+    {
+      "evidence_id": "allen-benthic-extract",
+      "spot_id": "DEMO-CRW-ORIG24-HERITAGE-POINT",
+      "source": "Allen Coral Atlas",
+      "dataset": "coral-atlas:benthic_data_verbose",
+      "product": "benthic map extract",
+      "product_version": "UNKNOWN",
+      "variable": "class_name",
+      "value": "UNKNOWN",
+      "unit": "UNKNOWN",
+      "scientific_layer": "CONTEXT_ONLY",
+      "epistemic_label": "UNKNOWN",
+      "source_time": "UNKNOWN",
+      "observation_time": "UNKNOWN",
+      "measurement_time": "UNKNOWN",
+      "survey_date": "UNKNOWN",
+      "processing_time": "UNKNOWN",
+      "publication_time": "UNKNOWN",
+      "ingestion_time": "2026-10-01T07:46:05.256Z",
+      "spatial_association": "UNKNOWN",
+      "temporal_association": "UNKNOWN",
+      "spatial_precision": "UNKNOWN",
+      "temporal_precision": "UNKNOWN",
+      "quality": {
+        "source": "UNKNOWN",
+        "baliza": "UNKNOWN",
+        "association": "UNKNOWN",
+        "quality_basis": "UNKNOWN",
+        "quality_method": "UNKNOWN",
+        "quality_timestamp": "UNKNOWN"
+      },
+      "uncertainty": {
+        "measurement": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "spatial": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "temporal": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "association": {
+          "kind": "UNKNOWN",
+          "value": "UNKNOWN"
+        },
+        "model": {
+          "kind": "NOT_APPLICABLE",
+          "value": "NOT_APPLICABLE"
+        }
+      },
+      "freshness": {
+        "reference_time": "UNKNOWN",
+        "observation_time": "UNKNOWN",
+        "ingestion_time": "2026-10-01T07:46:05.256Z",
+        "age": "UNKNOWN",
+        "freshness_status": "UNKNOWN",
+        "freshness_method": "NOT_DEFINED",
+        "ingestion_used_as_observation": false
+      },
+      "provenance": {
+        "dataset": "coral-atlas:benthic_data_verbose",
+        "raw_file_reference": "benthic_bbox.json",
+        "raw_checksum": "9c8e75badd8ef73073f3fe0130360fb5878e2674a65d3bee87dabbca7f6beda9",
+        "retrieval_timestamp": "2026-10-01T07:46:05.256Z",
+        "source_url": "https://allencoralatlas.org/geoserver/ows",
+        "request_parameters": {
+          "geometry": "null on stored features"
+        },
+        "integrity": "SHA-256"
+      },
+      "transformation_type": "PARSED",
+      "transformation_chain": [
+        "PARSED"
+      ],
+      "downscaled": "NOT_AUTHORIZED",
+      "interpolated": "NOT_AUTHORIZED",
+      "model_estimated": "NOT_AUTHORIZED",
+      "gaps": [
+        "SPATIAL_GAP",
+        "PROVENANCE_GAP"
+      ],
+      "local_estimate": "NOT_AUTHORIZED",
+      "traceability": "PARTIAL",
+      "evidence_completeness": "PARTIAL",
+      "usable_in_later_indicator": false
+    }
+  ],
+  "unretrieved_noaa_cells": [
+    {
+      "latitude": -23.475,
+      "longitude": 152.025,
+      "value": "UNKNOWN",
+      "gap": "DATA_GAP"
+    },
+    {
+      "latitude": -23.525,
+      "longitude": 151.975,
+      "value": "UNKNOWN",
+      "gap": "DATA_GAP"
+    },
+    {
+      "latitude": -23.525,
+      "longitude": 152.025,
+      "value": "UNKNOWN",
+      "gap": "DATA_GAP"
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "DATA_GAP",
+      "detail": "Three documented NOAA cell centers were not retrieved."
+    },
+    {
+      "kind": "SOURCE_GAP",
+      "detail": "EMODnet depth was not retrieved. The European DTM does not cover this cell."
+    },
+    {
+      "kind": "SPATIAL_GAP",
+      "detail": "The stored Allen features have no geometry, so no polygon was associated."
+    },
+    {
+      "kind": "TEMPORAL_GAP",
+      "detail": "The spot has no reference time. NOAA grid time was not used as one."
+    },
+    {
+      "kind": "GROUND_TRUTH_GAP",
+      "detail": "No field observation was associated with this spot."
+    },
+    {
+      "kind": "QUALITY_GAP",
+      "detail": "NOAA rows have no source quality flag."
+    },
+    {
+      "kind": "LICENSE_ACCESS_GAP",
+      "detail": "MERMAID /sites/ returned 401. Summary access is not site verification."
+    },
+    {
+      "kind": "PROVENANCE_GAP",
+      "detail": "NOAA retrieval is a calendar date. MERMAID raw bodies were not stored."
+    }
+  ],
+  "source_conflict": {
+    "dimension": "SST anomaly on the retrieved cell",
+    "status": "SOURCE_CONFLICT",
+    "resolved": false
+  },
+  "complementary_evidence": {
+    "pair": "NOAA degree heating week and MERMAID bleaching",
+    "status": "COMPLEMENTARY_EVIDENCE",
+    "reason": "They are different variables. No MERMAID bleaching value was associated."
+  },
+  "mermaid": {
+    "official_access": "PARTIAL",
+    "sample_event_access": "AVAILABLE",
+    "spatial_site_access": "PARTIAL",
+    "spatial_compatibility": "UNKNOWN",
+    "temporal_compatibility": "UNKNOWN",
+    "summary_sample_event_count": 16557,
+    "usable_spot_observations": 0,
+    "count_is_not_usable_observations": true,
+    "status": "ACCESS_GAP"
+  },
+  "local_estimate": "NONE",
+  "downscaling": "NOT_AUTHORIZED",
+  "alerts": []
+}

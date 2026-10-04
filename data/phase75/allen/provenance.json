@@ -1,0 +1,29 @@
+{
+  "label": "DEMONSTRATION / RESEARCH TEST AREA",
+  "note": "Public WFS attribute sample. Not a resort. Not a local observation. Geometry was not requested.",
+  "retrieval_http_date": "Thu, 01 Oct 2026 07:46:05 GMT",
+  "response_timestamps": {
+    "benthic_bbox.json": "2026-10-01T07:46:05.256Z",
+    "geomorphic_bbox.json": "2026-10-01T07:46:05.474Z"
+  },
+  "endpoint": "https://allencoralatlas.org/geoserver/ows",
+  "request": {
+    "service": "WFS",
+    "version": "2.0.0",
+    "request": "GetFeature",
+    "propertyName": "class_name,area_sqkm",
+    "outputFormat": "application/json",
+    "bbox": "-23.48,151.97,-23.47,151.98",
+    "crs": "urn:ogc:def:crs:EPSG::4326"
+  },
+  "aoi": "About 0.01 by 0.01 degrees around the Phase 7.5 CRW demonstration cell. Not a resort.",
+  "authentication": "None sent. WFS and WMS answered without a credential.",
+  "portal_login": "Not used. Website package download is not an official unattended API, and the terms prohibit automated site retrieval.",
+  "license": "FAQ citation: maps, bathymetry and map statistics © 2018-2023 Allen Coral Atlas Partnership and Arizona State University, CC BY 4.0. Terms of Use also prohibit robots from retrieving the website. The global habitat-map dataset may not be reproduced without written consent.",
+  "attribution": "Allen Coral Atlas (2022). Imagery, maps and monitoring of the world's tropical coral reefs. https://doi.org/10.5281/zenodo.3833242",
+  "files": [
+    {"name": "benthic_bbox.json", "bytes": 7891, "sha256": "9c8e75badd8ef73073f3fe0130360fb5878e2674a65d3bee87dabbca7f6beda9"},
+    {"name": "geomorphic_bbox.json", "bytes": 4646, "sha256": "f06c0b7ad90c10942c0d1c3fab3148db075421f0eed1b82f2c0ade32ae2e5a58"},
+    {"name": "mapping_maps.json", "bytes": 2133, "sha256": "8b8649f8d74e8e51f107784a377eeb88fe0c41ed7792a6305d2a2cd2926278e6"}
+  ]
+}

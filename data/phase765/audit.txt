@@ -1,0 +1,9 @@
+BALIZA REAL DATASET AUDIT
+Spot: DEMO-CRW-ORIG24-HERITAGE-POINT
+NOAA: six CSV subsets exist. Stored SHA-256 values are checked against the files. Product version is taken from the ERDDAP metadata attribute when that attribute is present. CRS is unknown. Four cell centers are listed and one value is stored. No average was calculated.
+Allen: benthic, geomorphic, and map-catalogue JSON files exist with stored checksums. Feature geometry is null. Classes are not a field observation. Service XML files exist without a stored checksum.
+EMODnet: the capabilities call was documented. No depth file is stored. Documented is not retrieved.
+MERMAID: public summary access is partial. The summary count is not a count of observations of this spot. No match with the demonstration spot was verified. This is not a statement that MERMAID has no data.
+Resort: not available. Resort history is not base-model training.
+Freshness status remains unknown. No risk state was produced.
+NOAA cells: 4. Valued: 1. Averaged value: none.

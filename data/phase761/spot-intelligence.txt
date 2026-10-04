@@ -1,0 +1,60 @@
+BALIZA SPOT INTELLIGENCE
+DEMONSTRATION / RESEARCH TEST SPOT
+Spot: DEMO-CRW-ORIG24-HERITAGE-POINT
+Geometry: POINT
+Latitude: -23.5
+Longitude: 152.0
+CRS: UNKNOWN
+Spatial precision: UNKNOWN
+
+MEASURED
+None
+
+EXTERNAL INDICATORS
+These values belong to one retrieved NOAA cell, not to the spot.
+Cell: -23.475, 151.975
+Association to the spot: UNKNOWN
+Interpretation: external gridded indicator. Not a local measurement.
+
+crw_coraltemp_sst: 22.72 degree_C at 2026-09-26T12:00:00Z quality=UNKNOWN
+crw_sst_anomaly_v31: 0.78 degree_C at 2026-09-26T12:00:00Z quality=UNKNOWN
+crw_sst_anomaly_1991_2020: 0.4 degree_Celsius at 2026-09-26T12:00:00Z quality=UNKNOWN
+crw_hotspot: -4.39 degree_C at 2026-09-26T12:00:00Z quality=QUESTIONABLE
+crw_dhw: 0.0 degree_Celsius_weeks at 2026-09-26T12:00:00Z quality=UNKNOWN
+crw_bleaching_alert_area_7d: 0 stress_level at 2026-09-26T12:00:00Z quality=UNKNOWN
+
+NOAA cells at 0.025 degrees from the published point: 4
+Confirmed intersection: no
+Values retrieved: 1 cell
+Values not retrieved: 3 cells, left UNKNOWN
+No cell was chosen. No mean was calculated.
+
+ALLEN CORAL ATLAS
+Not associated with this spot.
+The stored WFS bbox does not contain this point.
+No benthic class is stated for the spot.
+
+EMODNET
+DATA GAP / SOURCE GAP
+
+MERMAID
+LICENSE / ACCESS GAP
+No field observation.
+
+DERIVED INDICATORS
+None
+
+ESTIMATED
+None
+
+DOWNSCALING
+Not authorized
+
+ALERT
+None
+
+PLAYBOOK OPTIONS
+None selected
+
+SOURCE CONFLICT
+Two SST-anomaly products on the retrieved cell differ. Neither is selected.

@@ -1,0 +1,690 @@
+# Canonical variable registry for Phase 7.
+# candidate_* = eligible to be discussed in a later design. Not approved for training.
+# evidence_strength is not feature importance.
+# NOAA Bleaching Alert Area is external evidence, never a BALIZA Alert.
+# available_in_MERMAID is omitted when the status is NOT_AVAILABLE. See sources/mermaid.md.
+# Resort history is site calibration and validation, not default training of a base model.
+
+variables:
+  - variable_id: sst
+    canonical_name: Sea surface temperature (CoralTemp)
+    aliases: [SST, CoralTemp]
+    definition: Nighttime sea-surface foundation temperature from CRW CoralTemp v3.1, calibrated by CRW to 0.2 m.
+    unit: degC
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: Warm-season sea temperature is the physical driver cited for mass bleaching (SRC-HOEGH-1999, SRC-HUGHES-2017). This product measures the surface, not the colony.
+    scientific_role: HAZARD
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-SKIRVING-2020, SRC-NOAA-METHOD]
+    expected_relationship: Higher SST relative to the local warm-season climatology is associated with bleaching risk. The product alone is not a bleaching observation.
+    limitations: Gap-filled; 1985–2002 segment has lower data density; not depth-resolved.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: hazard_input_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Satellite skin/foundation temperature versus reef water at depth is unresolved here.
+    validation_requirements: Compare with local temperature at known depth and time. Do not treat a match at the surface as a match at the colony.
+    leakage: Using a later SST to explain an earlier survey is temporal leakage.
+
+  - variable_id: sst_anomaly
+    canonical_name: SST anomaly
+    aliases: [SSTA]
+    definition: CRW daily SST minus the daily climatology interpolated from monthly means (1985–2012, adjusted to 1988.2857).
+    unit: degC
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: Departure from the seasonal mean. Not the same as HotSpot, which uses the maximum monthly mean.
+    scientific_role: HAZARD
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-SKIRVING-2020]
+    expected_relationship: Context for unusual warmth or cold. CRW states it does not by itself track bleaching-level heat stress.
+    limitations: Climatology baseline is part of the product version. A different baseline is a different variable.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: hazard_input_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Baseline choice dominates the number.
+    validation_requirements: Store the climatology version with every value.
+    leakage: Do not recompute the anomaly with a climatology that includes the prediction period without documenting it.
+
+  - variable_id: hotspot
+    canonical_name: Coral Bleaching HotSpot
+    aliases: [HS]
+    definition: Max(SST − MMM, 0) on the CRW v3.1 grid.
+    unit: degC
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: Exceedance of the local warm-season maximum monthly mean.
+    scientific_role: HAZARD
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-SKIRVING-2020, SRC-NOAA-METHOD]
+    expected_relationship: Positive HotSpot is the CRW measure of current warm-season heat. It is not a bleaching survey.
+    limitations: One MMM per pixel. Negative anomalies are clipped to zero, so cold stress is invisible.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: hazard_input_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: MMM is a surface climatology, not a species tolerance.
+    validation_requirements: Pair with in-water temperature and with bleaching surveys before any local rule.
+    leakage: HotSpot on the survey day is context for that survey, not a predictor of that same survey if the survey is the target and the HotSpot was computed from temperatures after the survey.
+
+  - variable_id: dhw
+    canonical_name: Degree Heating Week
+    aliases: [DHW]
+    definition: 84-day sum of HotSpot values ≥ 1 °C, each divided by 7.
+    unit: degC_week
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: Accumulation of warm-season exceedance, as defined by CRW.
+    scientific_role: HAZARD
+    evidence_strength: STRONG_EVIDENCE
+    evidence_sources: [SRC-SKIRVING-2020, SRC-NOAA-METHOD, SRC-HUGHES-2017]
+    expected_relationship: CRW uses DHW as an index of accumulated heat associated with mass bleaching. The numerical bands in the CRW alert table are CRW's classes, not BALIZA thresholds.
+    limitations: Starts only once HotSpot reaches 1 °C. Does not include light, taxa, or depth.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: hazard_input_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Same DHW does not imply the same biological outcome across regions or species.
+    validation_requirements: Local surveys of bleaching and mortality, with the CRW version stored.
+    leakage: DHW integrates the previous 84 days. Using it to predict a survey inside that window can leak the conditions of the survey week. Document the cutoff date.
+
+  - variable_id: bleaching_alert_area
+    canonical_name: CRW Bleaching Alert Area
+    aliases: [BAA, BAA_7D_MAX]
+    definition: CRW categorical class from HotSpot and DHW. Single-day and 7-day maximum are different products.
+    unit: categorical
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: A classification of the thermal products, not an independent observation of bleached tissue.
+    scientific_role: CONTEXT
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-NOAA-METHOD]
+    expected_relationship: None inside BALIZA. Must not be copied into Alert.
+    limitations: CRW states the single-day product is unstable in variable locations. Mortality wording on the legend is CRW's, not a measured local mortality.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: no
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Class boundaries are product rules.
+    validation_requirements: If retained, store as external evidence beside the underlying SST, HotSpot, and DHW.
+    leakage: The class is a function of HotSpot and DHW. Using both the class and those inputs double-counts the same heat.
+
+  - variable_id: thermal_climatology_mmm
+    canonical_name: Maximum monthly mean climatology
+    aliases: [MMM]
+    definition: Maximum of the 12 CRW monthly-mean SST values for a pixel.
+    unit: degC
+    temporal_resolution: static for a product version
+    spatial_resolution: 0.05 degree
+    mechanism: CRW's warm-season reference. Not a biological threshold.
+    scientific_role: CONTEXT
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-SKIRVING-2020]
+    expected_relationship: Reference for HotSpot. Changing it changes every downstream heat metric.
+    limitations: Tied to 1985–2012 adjusted to 1988.2857 in v3.1.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: A fixed baseline in a warming ocean is a known interpretation issue; no alternative baseline is adopted here.
+    validation_requirements: Record the climatology version on every derived value.
+    leakage: Refitting the climatology on the evaluation years leaks future climate into the reference.
+
+  - variable_id: sst_trend_7d
+    canonical_name: Seven-day SST trend
+    aliases: [SST trend]
+    definition: CRW trend of the last seven CoralTemp values, with the test described on the methodology page.
+    unit: degC_per_7d
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree
+    mechanism: Short-term direction of surface temperature. Not accumulated stress.
+    scientific_role: CONTEXT
+    evidence_strength: MODERATE_EVIDENCE
+    evidence_sources: [SRC-NOAA-METHOD]
+    expected_relationship: Context only. No bleaching relationship is adopted.
+    limitations: Insignificant trends are masked by CRW in the graphics.
+    available_in_NOAA: AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Seven days is a CRW window, not a biological constant.
+    validation_requirements: None until a study links this product to local outcome.
+    leakage: Overlaps the days immediately before a survey.
+
+  - variable_id: thermal_stress_duration
+    canonical_name: Thermal stress duration
+    aliases: []
+    definition: Count of days above a stated heat condition. The condition is not defined by BALIZA.
+    unit: day
+    temporal_resolution: UNKNOWN
+    spatial_resolution: UNKNOWN
+    mechanism: Persistence of heat is discussed in the bleaching literature. No duration metric is adopted.
+    scientific_role: HAZARD
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified.
+    limitations: DHW already accumulates intensity. A separate duration must not silently double-count DHW.
+    available_in_NOAA: PARTIAL
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Definition is open.
+    validation_requirements: A written definition and a source before any use.
+    leakage: Any duration that includes days after the survey leaks the outcome period.
+
+  - variable_id: thermal_stress_frequency
+    canonical_name: Thermal stress frequency
+    aliases: []
+    definition: Count of past heat events. Event definition is not adopted.
+    unit: count
+    temporal_resolution: UNKNOWN
+    spatial_resolution: UNKNOWN
+    mechanism: Return frequency of mass bleaching is described by SRC-HUGHES-2018. A local frequency variable is not defined.
+    scientific_role: CONTEXT
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-HUGHES-2018]
+    expected_relationship: Not specified at station scale.
+    limitations: Depends entirely on the event definition.
+    available_in_NOAA: PARTIAL
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High until the event rule is sourced.
+    validation_requirements: Do not invent an event threshold.
+    leakage: Counting events that include the target year leaks the target.
+
+  - variable_id: stress_onset
+    canonical_name: Stress onset date
+    aliases: []
+    definition: First day a stated heat condition is met. Condition not adopted.
+    unit: date
+    temporal_resolution: daily
+    spatial_resolution: 0.05 degree if derived from CRW
+    mechanism: Timing of heat relative to a survey. Not defined here.
+    scientific_role: CONTEXT
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified.
+    limitations: Requires an explicit onset rule from a source.
+    available_in_NOAA: PARTIAL
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Open.
+    validation_requirements: Open.
+    leakage: Onset computed with data after the decision date is temporal leakage.
+
+  - variable_id: thermal_history
+    canonical_name: Thermal history
+    aliases: []
+    definition: Prior heat exposure of a place. Metric not adopted.
+    unit: UNKNOWN
+    temporal_resolution: UNKNOWN
+    spatial_resolution: UNKNOWN
+    mechanism: SRC-HUGHES-2017 found that prior GBR bleaching in 1998 and 2002 did not lessen 2016 severity. That is evidence against assuming protection from history, not a formula for acclimatization.
+    scientific_role: CONTEXT
+    evidence_strength: CONTEXT_DEPENDENT
+    evidence_sources: [SRC-HUGHES-2017]
+    expected_relationship: Not specified. Do not encode "history protects".
+    limitations: Acclimatization is an open question.
+    available_in_NOAA: PARTIAL
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High.
+    validation_requirements: A pre-registered history metric and local outcome data.
+    leakage: History must end before the forecast origin.
+
+  - variable_id: bathymetry
+    canonical_name: Bathymetry
+    aliases: [DTM]
+    definition: Elevation of the seabed. Provider-specific.
+    unit: m
+    temporal_resolution: static or infrequently updated
+    spatial_resolution: EMODnet European DTM 1/16 arc minute; Allen satellite depth 10 m; otherwise UNKNOWN
+    mechanism: Depth structure changes light and temperature exposure. No quantitative transfer function is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-EMODNET-BATHY, SRC-ALLEN-METHODS]
+    expected_relationship: Not specified.
+    limitations: European DTM does not cover global reefs. Allen depth is satellite-derived and relative, excluded in turbid water.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Vertical datum and bias versus diver depth are unquantified here.
+    validation_requirements: Local depth soundings.
+    leakage: Low if the surface is static and not fitted on the target sites only.
+
+  - variable_id: depth_local
+    canonical_name: Local depth
+    aliases: [survey depth]
+    definition: Depth recorded with a station or transect observation.
+    unit: m
+    temporal_resolution: survey time
+    spatial_resolution: point
+    mechanism: Same physical idea as bathymetry, measured locally. No effect size is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified.
+    limitations: Not in the current BALIZA schema as a typed field. spatial_ref is an opaque string.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: MERMAID transect depth is metres on stated forms. CRS and bleaching-form depth were not confirmed. Method (gauge, diver, sensor) unknown until observed.
+    validation_requirements: Method and vertical datum on the observation.
+    leakage: None if it is a site attribute. Do not fill missing depth from the target sites' outcomes.
+
+  - variable_id: slope
+    canonical_name: Slope
+    aliases: []
+    definition: Gradient of a bathymetric surface.
+    unit: UNKNOWN
+    temporal_resolution: static
+    spatial_resolution: inherits the DTM
+    mechanism: Used as a covariate in reef mapping (Allen methods). No bleaching relationship is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-ALLEN-METHODS]
+    expected_relationship: Not specified for bleaching.
+    limitations: Depends on the DTM resolution. A 5 km thermal pixel does not have one slope.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Algorithm and units not fixed.
+    validation_requirements: State the window used to compute the gradient.
+    leakage: Low for a static derivative.
+
+  - variable_id: aspect
+    canonical_name: Aspect
+    aliases: []
+    definition: Downslope direction of a bathymetric surface.
+    unit: degree
+    temporal_resolution: static
+    spatial_resolution: inherits the DTM
+    mechanism: Not established in this registry for bleaching.
+    scientific_role: CONTEXT
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified.
+    limitations: Not confirmed as an Allen or EMODnet delivered product. Slope is mentioned; aspect as a published bleaching covariate was not verified.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: UNKNOWN
+    available_in_ALLEN: UNKNOWN
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: no
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High.
+    validation_requirements: A source that defines the product.
+    leakage: Low if static.
+
+  - variable_id: geomorphology
+    canonical_name: Geomorphic zone
+    aliases: []
+    definition: Allen Coral Atlas v2 geomorphic class at 5 m, for areas the FAQ limits to shallower than 15 m.
+    unit: categorical
+    temporal_resolution: map epoch 2018–2020
+    spatial_resolution: 5 m
+    mechanism: Reef-zone context. No bleaching coefficient is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: MODERATE_EVIDENCE
+    evidence_sources: [SRC-ALLEN-METHODS, SRC-ACA-EE]
+    expected_relationship: Not specified.
+    limitations: Map accuracy 60–90% by region. Not a survey.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Allen classification error is regional. MERMAID reef type, zone, and exposure are site fields, not those classes.
+    validation_requirements: Local habitat labels.
+    leakage: Spatial leakage if nearby reefs' labels are used to fill a target reef that was in the training set of the map and of the model.
+
+  - variable_id: reef_extent
+    canonical_name: Reef extent
+    aliases: [reef mask]
+    definition: Allen v2 reef mask at 5 m.
+    unit: categorical
+    temporal_resolution: map epoch
+    spatial_resolution: 5 m
+    mechanism: Where shallow reef is mapped. Used as exposure context, not as proof a station has live coral.
+    scientific_role: EXPOSURE
+    evidence_strength: MODERATE_EVIDENCE
+    evidence_sources: [SRC-ACA-EE]
+    expected_relationship: A station outside the mask may still have reef; a pixel inside the mask may not have live coral.
+    limitations: Shallow-water optical limit.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: exposure_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Commission and omission not quantified globally in this registry.
+    validation_requirements: Local reef presence.
+    leakage: Do not use the mask as a target and as a feature.
+
+  - variable_id: benthic_habitat
+    canonical_name: Benthic habitat class
+    aliases: []
+    definition: Allen v2 benthic class at 5 m, FAQ depth limit shallower than 10 m.
+    unit: categorical
+    temporal_resolution: map epoch 2018–2020
+    spatial_resolution: 5 m
+    mechanism: Dominant cover class (for example sand or seagrass). Not percent coral cover.
+    scientific_role: CONTEXT
+    evidence_strength: MODERATE_EVIDENCE
+    evidence_sources: [SRC-ALLEN-METHODS]
+    expected_relationship: Not a bleaching predictor by itself in this registry.
+    limitations: Coarse classes. Accuracy varies.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Allen accuracy varies by region. MERMAID benthic attributes are a different classification and are policy-limited.
+    validation_requirements: Transect cover.
+    leakage: Same as geomorphology.
+
+  - variable_id: turbidity
+    canonical_name: Water turbidity
+    aliases: [FNU]
+    definition: Allen annual turbidity. Stored download values are FNU × 10. Cap stated as 100 FNU.
+    unit: FNU
+    temporal_resolution: annual
+    spatial_resolution: stated as 10 m on the methods page for the related depth work; confirm per file
+    mechanism: Optical environment. No bleaching effect size is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-ALLEN-METHODS]
+    expected_relationship: Not specified. SRC-HUGHES-2017 reported minimal effect of water quality on 2016 GBR bleaching severity. That does not prove turbidity never matters.
+    limitations: Annual composite. Bottom reflectance correction is part of the method. Not a daily light dose.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: UNKNOWN
+    available_in_ALLEN: AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_feature
+    candidate_RBM: context_only
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Annual value versus the week of a survey.
+    validation_requirements: Local optical measurements at survey time.
+    leakage: An annual map that includes months after the survey leaks future water quality into the survey features.
+
+  - variable_id: currents
+    canonical_name: Ocean currents
+    aliases: []
+    definition: Water velocity. Present as an EMODnet Physics parameter and as a Copernicus input to EUSeaMap. No reef product is selected.
+    unit: UNKNOWN
+    temporal_resolution: UNKNOWN
+    spatial_resolution: UNKNOWN
+    mechanism: Heat and larval transport are plausible. No relationship is adopted.
+    scientific_role: CONTEXT
+    evidence_strength: UNKNOWN
+    evidence_sources: [SRC-EMODNET-PHYSICS]
+    expected_relationship: Not specified.
+    limitations: Coverage at reefs is UNKNOWN.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High.
+    validation_requirements: A named product, unit, and depth of the current.
+    leakage: Forecast currents that assimilate the target period leak.
+
+  - variable_id: waves
+    canonical_name: Waves
+    aliases: []
+    definition: Wave height or period as catalogued by EMODnet Physics, or wave climate used in Allen mapping. No single product is selected.
+    unit: UNKNOWN
+    temporal_resolution: UNKNOWN
+    spatial_resolution: UNKNOWN
+    mechanism: Not adopted for bleaching.
+    scientific_role: CONTEXT
+    evidence_strength: UNKNOWN
+    evidence_sources: [SRC-EMODNET-PHYSICS, SRC-ALLEN-METHODS]
+    expected_relationship: Not specified.
+    limitations: Allen uses modeled waves as a mapping covariate, which is not a bleaching observation.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: PARTIAL
+    available_in_ALLEN: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: unknown
+    candidate_RBM: no
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High.
+    validation_requirements: Named product before use.
+    leakage: Same as currents.
+
+  - variable_id: coral_cover
+    canonical_name: Coral cover
+    aliases: []
+    definition: Percent of substrate occupied by live coral, from a stated survey method.
+    unit: percent
+    temporal_resolution: survey
+    spatial_resolution: transect or quadrat
+    mechanism: State of the reef. Also used in other studies as a vulnerability or exposure descriptor. No role is adopted beyond OBSERVATION until a method is chosen.
+    scientific_role: OBSERVATION
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified. Allen benthic class is not this variable.
+    limitations: Absent from NOAA, from the Allen class map, and from the current BALIZA schema.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: UNKNOWN
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: MERMAID percent cover depends on method and on the project's data policy. Observer error is unquantified.
+    validation_requirements: A written survey protocol. Public summary is not observation-level cover.
+    leakage: Cover measured at the same time as bleaching is not a predictor of that bleaching.
+
+  - variable_id: bleaching_percentage
+    canonical_name: Observed bleaching percentage
+    aliases: []
+    definition: Percent of colonies or cover recorded as bleached in a survey.
+    unit: percent
+    temporal_resolution: survey_time
+    spatial_resolution: transect
+    mechanism: The biological state to be explained or later predicted. It is not itself a thermal measurement.
+    scientific_role: TARGET
+    evidence_strength: ESTABLISHED
+    evidence_sources: [SRC-HUGHES-2017]
+    expected_relationship: Surveys are the ground truth for bleaching state. They do not prove the cause by themselves.
+    limitations: Not in the BALIZA schema. NOAA alert classes are not this variable.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: no
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: MERMAID stores colony categories and calculated percents, not a NOAA class. Access depends on data policy.
+    validation_requirements: This is a field observation and a possible validation target. It is not a feature of a bleaching model. DHW is not assumed to predict it.
+    leakage: TARGET LEAKAGE if used as a predictor of bleaching.
+
+  - variable_id: mortality_percentage
+    canonical_name: Observed mortality percentage
+    aliases: []
+    definition: Percent dead after a stated interval, from a survey.
+    unit: percent
+    temporal_resolution: survey
+    spatial_resolution: transect
+    mechanism: A later biological state. CRW legend text about mortality risk is not this measurement.
+    scientific_role: OUTCOME
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-NOAA-METHOD]
+    expected_relationship: Not specified.
+    limitations: The NOAA legend's mortality phrases are not observations. MERMAID "recently dead" is a bleaching-survey category, not this percent.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: PARTIAL
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: consequence_candidate
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: Time since stress changes the number.
+    validation_requirements: A defined follow-up window.
+    leakage: Cannot be a feature of a model that predicts mortality.
+
+  - variable_id: species_richness
+    canonical_name: Species richness
+    aliases: []
+    definition: Count of coral species in a stated sample.
+    unit: count
+    temporal_resolution: survey
+    spatial_resolution: transect
+    mechanism: Community descriptor. No vulnerability weight is adopted.
+    scientific_role: OBSERVATION
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: Not specified.
+    limitations: Not provided by the three external products as a station time series.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: UNKNOWN
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: UNKNOWN
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: MERMAID records taxa. A richness metric was not verified. Effort-dependent.
+    validation_requirements: Sampling effort must be stored.
+    leakage: Richness from the same survey as the target is concurrent state, not a prior cause.
+
+  - variable_id: disease
+    canonical_name: Coral disease observation
+    aliases: []
+    definition: Presence or prevalence of a named disease, from a survey.
+    unit: UNKNOWN
+    temporal_resolution: survey
+    spatial_resolution: transect
+    mechanism: NOAA's narrative says bleached corals can be more susceptible to disease. That sentence is not a rate.
+    scientific_role: OBSERVATION
+    evidence_strength: LIMITED_EVIDENCE
+    evidence_sources: [SRC-NOAA-METHOD]
+    expected_relationship: Not quantified here.
+    limitations: No product in the three sources was verified as a disease layer.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_MERMAID: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: no
+    candidate_RBM: unknown
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: High. Not found on the MERMAID method pages read.
+    validation_requirements: A disease protocol and a name for the condition.
+    leakage: Disease scored together with bleaching is not an independent predictor of that bleaching.
+
+  - variable_id: downscaled_temperature_estimate
+    canonical_name: Downscaled temperature estimate
+    aliases: []
+    definition: A future model output. Not a product that exists today.
+    unit: degC
+    temporal_resolution: to be defined
+    spatial_resolution: to be defined
+    mechanism: Statistical estimate of local temperature from coarser thermal data and context. It would be an estimate, not a measurement.
+    scientific_role: HAZARD
+    evidence_strength: UNKNOWN
+    evidence_sources: []
+    expected_relationship: None until a model is validated.
+    limitations: Must not be labeled as truth. Must carry model version and uncertainty.
+    available_in_NOAA: NOT_AVAILABLE
+    available_in_EMODNET: NOT_AVAILABLE
+    available_in_ALLEN: NOT_AVAILABLE
+    available_in_BALIZA: NOT_AVAILABLE
+    candidate_XGBOOST: candidate_target
+    candidate_RBM: no
+    candidate_RANDOM_FOREST: not_authorized
+    candidate_PLAYBOOK: not_authorized
+    uncertainty: The entire point of the future model.
+    validation_requirements: Spatial and temporal holdouts against local temperature. See xgboost-design.md.
+    leakage: Training on the same stations and years that are used for reported skill is leakage.

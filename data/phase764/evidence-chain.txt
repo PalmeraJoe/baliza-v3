@@ -1,0 +1,21 @@
+BALIZA EVIDENCE CHAIN
+Spot: DEMO-CRW-ORIG24-HERITAGE-POINT
+
+NOAA CoralTemp SST:
+22.72 degree_C. Grid time 2026-09-26T12:00:00Z.
+This value belongs to the retrieved cell, not to a local measurement.
+Four documented cell centers are listed. Intersection is not confirmed, because the CRS is unknown.
+Three cell values were not retrieved and stay unknown.
+The retrieved file is noaacrwsstDaily_2026-09-26.csv.
+SHA-256 bcdedac953a08fcd43591a8140996c8f05abdf047f0b52fe4b0d614c7582f4e9.
+No local temperature was calculated.
+
+MERMAID:
+Public sample-event summaries were read.
+The reported summary count is 16557.
+That count is not a count of usable observations of this spot.
+Spatial and temporal compatibility stay UNKNOWN. This is not a statement that MERMAID has no data.
+
+Freshness status: UNKNOWN. No freshness policy is authorized.
+Uncertainty is unknown, not zero.
+Downscaling is not authorized.
